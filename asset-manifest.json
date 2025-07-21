@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec2f30f3.css",
-    "main.js": "/static/js/main.b8d0ffaa.js",
-    "index.html": "/index.html",
-    "main.ec2f30f3.css.map": "/static/css/main.ec2f30f3.css.map",
-    "main.b8d0ffaa.js.map": "/static/js/main.b8d0ffaa.js.map"
+    "main.css": "/audiology-website/static/css/main.ec2f30f3.css",
+    "main.js": "/audiology-website/static/js/main.eb1b9f44.js",
+    "index.html": "/audiology-website/index.html",
+    "main.ec2f30f3.css.map": "/audiology-website/static/css/main.ec2f30f3.css.map",
+    "main.eb1b9f44.js.map": "/audiology-website/static/js/main.eb1b9f44.js.map"
   },
   "entrypoints": [
     "static/css/main.ec2f30f3.css",
-    "static/js/main.b8d0ffaa.js"
+    "static/js/main.eb1b9f44.js"
   ]
 }
