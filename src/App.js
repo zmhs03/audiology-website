@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+import Home from "./Pages/Home";
+import AboutUs from "./Pages/AboutUs";
+import Awareness from "./Pages/Awareness";
+import GetInvolved from "./Pages/GetInvolved";
+import Support from "./Pages/Support";
+import NotFound from "./Pages/NotFound";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/AboutUs" element={<AboutUs />} />
+				<Route path="/Awareness" element={<Awareness />} />
+				<Route path="/Get-Involved" element={<GetInvolved />} />
+				<Route path="/Support" element={<Support />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+			<Footer />
+		</BrowserRouter>
+	);
 }
 
 export default App;
