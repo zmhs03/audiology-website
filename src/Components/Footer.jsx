@@ -1,9 +1,5 @@
-import {
-	FaInstagram,
-	FaFacebookF,
-	FaTiktok,
-	FaTwitter,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { FiSearch } from "react-icons/fi";
 import "../Styles/footer.css";
 
@@ -15,10 +11,9 @@ function Footer() {
 					{/* Hear & Now */}
 					<div className="footer-column">
 						<h3 className="footer-heading">Hear & Now</h3>
-						<p className="footer-description">
-							Excepteur officia elit laborum, minim veniam anim enim
-							occaecat culpa reprehenderit. Irure cupidatat laborum, quis
-							sunt laboris fugiat est adipiscing.
+						<p>
+							A digital platform dedicated to raising hearing health
+							awareness
 						</p>
 						<div className="search-container">
 							<div className="search-wrapper">
@@ -39,23 +34,35 @@ function Footer() {
 						<h3 className="footer-heading">Awareness</h3>
 						<ul className="footer-links">
 							<li>
-								<a href="#" className="footer-link">
-									Educational Articles
+								<a
+									href="/audiology-website/Awareness"
+									className="footer-link"
+								>
+									Overview
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
-									Videos
+								<a
+									href="/audiology-website/Gallery"
+									className="footer-link"
+								>
+									Gallery
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
-									Reports
+								<a
+									href="/audiology-website/Prevention"
+									className="footer-link"
+								>
+									Prevention
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
-									Research
+								<a
+									href="/audiology-website/Resources"
+									className="footer-link"
+								>
+									Resources
 								</a>
 							</li>
 						</ul>
@@ -66,17 +73,39 @@ function Footer() {
 						<h3 className="footer-heading">Get Involved</h3>
 						<ul className="footer-links">
 							<li>
-								<a href="#" className="footer-link">
-									Events and Campaigns
+								<a
+									href="/audiology-website/Get-Involved"
+									className="footer-link"
+								>
+									Get Involved
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
-									How to Help
+								<a
+									href="/audiology-website/Fundraising"
+									className="footer-link"
+								>
+									Fundraising
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
+								<a
+									href="/audiology-website/Volunteer"
+									className="footer-link"
+								>
+									Volunteer
+								</a>
+							</li>
+							<li>
+								<a
+									href="/audiology-website/Advocacy"
+									className="footer-link"
+								>
+									Advocacy
+								</a>
+							</li>
+							<li>
+								<a href="/audiology-website" className="footer-link">
 									Donate
 								</a>
 							</li>
@@ -88,18 +117,24 @@ function Footer() {
 						<h3 className="footer-heading">Support</h3>
 						<ul className="footer-links">
 							<li>
-								<a href="#" className="footer-link">
+								<a
+									href="/audiology-website/Audiologist"
+									className="footer-link"
+								>
 									Find an Audiologist
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
+								<a href="/audiology-website/FAQs" className="footer-link">
 									FAQs
 								</a>
 							</li>
 							<li>
-								<a href="#" className="footer-link">
-									Contact us
+								<a
+									href="/audiology-website/Support"
+									className="footer-link"
+								>
+									Contact Us
 								</a>
 							</li>
 						</ul>
@@ -122,7 +157,7 @@ function Footer() {
 					</a>
 					<a href="#" className="social-link">
 						<span className="sr-only">Twitter</span>
-						<FaTwitter size={20} />
+						<FaXTwitter size={20} />
 					</a>
 				</div>
 			</div>
