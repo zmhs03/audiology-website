@@ -25,10 +25,8 @@ function Home() {
 								What happened during World Hearing Day?
 							</h2>
 							<p className="featured-description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								Find out everything that happened on this year's World
+								Hearing Day, from events to compaigns.
 							</p>
 							<button className="featured-button">Read More</button>
 						</div>

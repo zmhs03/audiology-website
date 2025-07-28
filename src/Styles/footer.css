@@ -1,5 +1,5 @@
 .footer {
-	background-color: #e5e7eb;
+	background-color: #00c5cd;
 	padding: 48px 24px;
 }
 
@@ -30,13 +30,13 @@
 .footer-heading {
 	font-size: 18px;
 	font-weight: 600;
-	color: #111827;
+	color: #fff;
 	margin: 0;
 }
 
 .footer-description {
 	font-size: 14px;
-	color: #4b5563;
+	color: #fff;
 	line-height: 1.6;
 	margin: 0;
 }
@@ -90,13 +90,13 @@
 
 .footer-link {
 	font-size: 14px;
-	color: #4b5563;
+	color: #fff;
 	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-	color: #111827;
+	color: #2c387f;
 }
 
 .social-media {
@@ -106,12 +106,12 @@
 }
 
 .social-link {
-	color: #374151;
+	color: #2c387f;
 	transition: color 0.2s ease;
 }
 
 .social-link:hover {
-	color: #111827;
+	color: #fff;
 }
 
 .sr-only {
