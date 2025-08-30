@@ -3,6 +3,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 // import ArticleCard from "../Components/ArticleCard";
 // import { articlesData as articles } from "../Data/articles";
+import ear from "../Assets/images/ear.jpg";
 import placeholder from "../Assets/images/placeholder.jpg";
 import "../Styles/awareness.css";
 
@@ -11,7 +12,7 @@ function Awareness() {
 
 	// Gallery slides data
 	const slides = [
-		{ id: 1, content: "Slide 1" },
+		{ id: 1, image: { ear } },
 		{ id: 2, content: "Slide 2" },
 		{ id: 3, content: "Slide 3" },
 		{ id: 4, content: "Slide 4" },
