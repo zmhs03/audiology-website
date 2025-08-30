@@ -11,7 +11,7 @@ function Footer() {
 					{/* Hear & Now */}
 					<div className="footer-column">
 						<h3 className="footer-heading">Hear & Now</h3>
-						<p>
+						<p className="footer-description">
 							A digital platform dedicated to raising hearing health
 							awareness
 						</p>

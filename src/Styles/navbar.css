@@ -91,6 +91,11 @@
 	transition: all 0.2s ease-out;
 }
 
+.donate-wrapper {
+	display: block;
+	transition: all 0.3s ease;
+}
+
 .donate-btn {
 	background-color: #00c5cd;
 	color: white;
@@ -160,21 +165,322 @@
 	position: relative;
 }
 
-/* Responsive design for mobile */
-@media (max-width: 768px) {
+/* Hamburger button */
+.mobile-menu-icon {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 1.8rem;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 1600;
+}
+
+/* Drawer container */
+.drawer {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 400px;
+	height: 100%;
+	background: #fff;
+	box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+	transition: left 0.3s ease;
+	z-index: 1700;
+	padding: 2rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.drawer a {
+	text-decoration: none;
+	color: #000;
+}
+
+.drawer a:hover {
+	color: #00c5cd;
+	transition: all 0.2s ease-out;
+}
+
+.drawer.open {
+	left: 0;
+}
+
+.drawer-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	flex-grow: 1;
+}
+
+.drawer-submenu {
+	list-style: none;
+	padding-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.drawer-donate {
+	margin-top: auto;
+	text-align: center;
+}
+
+.drawer-dropdown {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1rem;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+
+.drawer-dropdown:hover {
+	color: #00c5cd;
+	transition: all 0.2s ease-out;
+}
+
+/* Overlay */
+.drawer-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	transition: width 0.3s ease;
+	z-index: 1650;
+}
+
+.drawer-overlay.active {
+	width: 100%;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Mobile phones - 480px and below */
+@media (max-width: 480px) {
+	.navbar {
+		padding: 0 15px;
+		height: 70px;
+	}
+
+	.navbar-logo {
+		font-size: 1.5rem;
+	}
+
 	.nav-menu {
-		flex-direction: column;
+		display: none;
+	}
+
+	.donate-btn {
+		display: none;
+	}
+
+	.mobile-menu-icon {
+		display: block;
+		font-size: 1.6rem;
+	}
+
+	.drawer {
+		width: 280px;
+		padding: 1.5rem 1rem;
+	}
+
+	.drawer-menu {
+		gap: 1rem;
+	}
+
+	.drawer .donate-btn {
+		background-color: #00c5cd;
+		color: white;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 4px;
+		font-size: 14px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+		width: 100%;
+		display: inline-block;
+	}
+
+	.drawer .donate-btn:hover {
+		background-color: #2c387f;
+	}
+}
+
+/* Small tablets - 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+	.navbar {
+		padding: 0 20px;
+	}
+
+	.navbar-logo {
+		font-size: 1.6rem;
+	}
+
+	.nav-menu {
+		display: none;
+	}
+
+	.donate-btn {
+		display: none;
+	}
+
+	.mobile-menu-icon {
+		display: block;
+	}
+
+	.drawer {
+		width: 320px;
+		padding: 2rem 1.2rem;
+	}
+
+	.drawer .donate-btn {
+		background-color: #00c5cd;
+		color: white;
+		border: none;
+		padding: 12px 24px;
+		border-radius: 4px;
+		font-size: 16px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+		width: 100%;
+		display: inline-block;
+	}
+
+	.drawer .donate-btn:hover {
+		background-color: #2c387f;
+	}
+}
+
+/* Medium tablets and large tablets - 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.navbar {
+		padding: 0 25px;
+	}
+
+	.nav-menu {
+		display: none;
+	}
+
+	.donate-btn {
+		display: none;
+	}
+
+	.mobile-menu-icon {
+		display: block;
+	}
+
+	.drawer {
+		width: 350px;
+		padding: 2rem 1.5rem;
+	}
+
+	.drawer .donate-btn {
+		background-color: #00c5cd;
+		color: white;
+		border: none;
+		padding: 12px 24px;
+		border-radius: 4px;
+		font-size: 16px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+		width: 100%;
+		display: inline-block;
+	}
+
+	.drawer .donate-btn:hover {
+		background-color: #2c387f;
+	}
+
+	.drawer-menu a,
+	.drawer-submenu a,
+	.drawer-dropdown {
+		text-decoration: none;
+		color: #000;
+		font-size: 1rem;
+		padding: 10px 0;
+		transition: all 0.2s ease-out;
+	}
+
+	.drawer-menu a:hover,
+	.drawer-submenu a:hover,
+	.drawer-dropdown:hover {
+		color: #00c5cd;
+	}
+}
+
+/* Desktop screens - 1025px to 1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+	.navbar {
+		padding: 0 40px;
+	}
+
+	.nav-menu {
+		gap: 30px;
+	}
+
+	.nav-links {
+		font-size: 1rem;
 	}
 
 	.dropdown-menu {
-		position: static;
-		box-shadow: none;
-		border: none;
-		background-color: rgba(255, 255, 255, 0.1);
-		margin-left: 20px;
+		min-width: 180px;
+	}
+
+	.donate-btn {
+		padding: 12px 24px;
+		font-size: 1rem;
+	}
+
+	.mobile-menu-icon {
+		display: none;
+	}
+}
+
+/* Large desktop screens - 1441px and above */
+@media (min-width: 1441px) {
+	.navbar {
+		padding: 0 50px;
+		height: 85px;
+	}
+
+	.navbar-logo {
+		font-size: 2rem;
+	}
+
+	.nav-menu {
+		gap: 40px;
+	}
+
+	.nav-links {
+		font-size: 1.1rem;
+	}
+
+	.dropdown-menu {
+		min-width: 200px;
 	}
 
 	.dropdown-link {
-		color: inherit;
+		padding: 12px 18px;
+	}
+
+	.donate-btn {
+		padding: 14px 28px;
+		font-size: 1.1rem;
+	}
+
+	.mobile-menu-icon {
+		display: none;
 	}
 }

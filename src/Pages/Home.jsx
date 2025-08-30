@@ -1,5 +1,6 @@
 import "../Styles/home.css";
 import placeholder from "../Assets/images/placeholder.jpg";
+import hero from "../Assets/images/hero.jpg";
 
 function Home() {
 	return (
@@ -7,7 +8,7 @@ function Home() {
 			{/* Hero Section */}
 			<section className="hero-section">
 				<img
-					src={placeholder}
+					src={hero}
 					alt="Hero background"
 					className="hero-background"
 				/>
