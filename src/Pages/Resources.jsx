@@ -1,7 +1,10 @@
-import React from "react";
-
+import ArticleCard from "../Components/ArticleCard";
 function Resources() {
-	return <div>Resources</div>;
+	return (
+		<div>
+			<ArticleCard />
+		</div>
+	);
 }
 
 export default Resources;

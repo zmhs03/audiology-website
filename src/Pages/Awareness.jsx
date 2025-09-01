@@ -10,12 +10,28 @@ import "../Styles/awareness.css";
 function Awareness() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 
-	// Gallery slides data
+	// Gallery slides data - changed to use images instead of text content
 	const slides = [
-		{ id: 1, image: { ear } },
-		{ id: 2, content: "Slide 2" },
-		{ id: 3, content: "Slide 3" },
-		{ id: 4, content: "Slide 4" },
+		{
+			id: 1,
+			image: placeholder,
+			alt: "Ear image",
+		},
+		{
+			id: 2,
+			image: placeholder, // Replace with your actual image
+			alt: "Slide 2 image",
+		},
+		{
+			id: 3,
+			image: ear, // Replace with your actual image
+			alt: "Slide 3 image",
+		},
+		{
+			id: 4,
+			image: placeholder, // Replace with your actual image
+			alt: "Slide 4 image",
+		},
 	];
 
 	const nextSlide = () => {
@@ -36,7 +52,13 @@ function Awareness() {
 				>
 					{slides.map((slide) => (
 						<div key={slide.id} className="slide">
-							<div className="slide-content">{slide.content}</div>
+							<div className="slide-content">
+								<img
+									src={slide.image}
+									alt={slide.alt}
+									className="slide-image"
+								/>
+							</div>
 						</div>
 					))}
 				</div>
