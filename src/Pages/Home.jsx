@@ -1,8 +1,18 @@
+import { useState, useEffect } from "react";
 import "../Styles/home.css";
 import placeholder from "../Assets/images/placeholder.jpg";
 import hero from "../Assets/images/hero.jpg";
+import ArticleCard from "../Components/ArticleCard";
+import { articlesData } from "../Data/articles";
 
 function Home() {
+	const [featured, setFeatured] = useState([]);
+
+	useEffect(() => {
+		const shuffled = [...articlesData].sort(() => 0.5 - Math.random());
+		setFeatured(shuffled.slice(0, 3));
+	}, []);
+
 	return (
 		<div className="home-container">
 			{/* Hero Section */}
@@ -52,6 +62,17 @@ function Home() {
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+			<section id="featured-articles">
+				<h2 className="section-heading">Featured Articles</h2>
+				<div className="featured-articles-grid">
+					{featured.map((article) => (
+						<ArticleCard
+							key={article.id}
+							article={article}
+						/>
+					))}
 				</div>
 			</section>
 		</div>

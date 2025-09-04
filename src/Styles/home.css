@@ -135,7 +135,24 @@
 	height: 100%;
 	object-fit: cover;
 }
+#featured-articles {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	height: 100vh;
+}
 
+#featured-articles h2 {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	color: #333;
+}
+.featured-articles-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 1.5rem;
+}
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
 /* Mobile phones - 480px and below */

@@ -123,23 +123,25 @@
 	margin-bottom: 50px;
 	text-align: left;
 }
+#popular-articles {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	height: 100vh;
+}
 
-.articles-grid {
+#popular-articles h2 {
+	text-align: left;
+	margin-bottom: 1rem;
+	margin-top: 2rem;
+	font-size: 25px;
+	color: #000;
+}
+.popular-articles-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 30px;
 	margin-bottom: 50px;
-}
-
-.no-articles {
-	text-align: center;
-	padding: 60px 0;
-}
-
-.no-articles p {
-	font-size: 1.2rem;
-	color: #64748b;
-	font-style: italic;
 }
 
 /* Pagination Dots */

@@ -45,7 +45,7 @@ const ArticleCard = ({ article }) => {
 						<span className="badge-open-access">Open Access </span>
 					)}
 					{article.citations > 0 && (
-						<span className="badge citations">
+						<span className="badge-citations">
 							{article.citations} citations
 						</span>
 					)}
@@ -93,20 +93,4 @@ const ArticleCard = ({ article }) => {
 	);
 };
 
-const ArticleCards = () => {
-	return (
-		<div className="articles-container">
-			<h2>Research Articles</h2>
-			<div className="articles-grid">
-				{articlesData.map((article) => (
-					<ArticleCard
-						key={article.id}
-						article={article}
-					/>
-				))}
-			</div>
-		</div>
-	);
-};
-
-export default ArticleCards;
+export default ArticleCard;

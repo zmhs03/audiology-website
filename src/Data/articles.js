@@ -175,7 +175,7 @@ export const articlesData = [
 			"Anita Edwards",
 		],
 		journal: "South African Journal of Communication Disorders",
-		year: "",
+		year: "2020",
 		doi: "10.4102/saicd.v67.i2.700",
 		abstract:
 			"Noise-induced hearing loss is 100% preventable if the collaborative stakeholders in the prevention process are fully committed to the process and implement effective measures timely. Audiologists have within their scope of practice the prevention of hearing loss and this needs to be at the forefront of all advocacy campaigns to prevent occupational hearing loss (OHL). In a systematic review by Moroe, Khoza-Shangase, Kanji and Ntlhakana (2018), where literature into the exposure to occupational noise in developing countries suggested that the prevalence of occupational noise-induced hearing loss (ONIHL) is still high, significant gaps in locally relevant and responsive evidence were identified. There is also evidence that the mining industry is aware of this epidemic; however, the efforts to curb ONIHL are currently unsuccessful. These authors explored and documented current evidence reflecting trends in the management of ONIHL in the mining industry in Africa from 1994 to 2016 through the use of the Preferred Reporting Items for Systematic Reviews and Meta-Analysis. Findings from this systematic review indicated that there is a dearth of research on the management of ONIHL in Africa. The limited research on the management of ONIHL focuses on some aspects of the hearing conservation programme pillars and not on all the pillars as suggested by some scholars in the field. Furthermore, they found that published studies had small sample sizes, thereby minimising their generalisation. This systematic review’s findings highlighted a need for more studies on the management of ONIHL in the mining sector, as evidence suggests that this condition in African countries is still on the rise; hence, there is the importance of this Special Issue, based on South Africa.",
@@ -257,7 +257,7 @@ export const articlesData = [
 			" Jannie Hugo",
 		],
 		journal: "African Health Sciences",
-		year: "",
+		year: "2019",
 		doi: "10.4314/ahs.v18i2.16",
 		abstract:
 			"Background: Hearing loss prevalence data in South Africa is scarce, especially within primary health care settings. Objectives: To determine; (i) the prevalence of hearing disorders in patients ≥3 years of age attending two primary health care clinics, and (ii) the nature and characteristics of hearing disorders at these primary health care clinics. Method: A cross-sectional design was used at two primary health care clinics. Non-probability purposive sampling was used to screen participants at clinics for hearing loss with pure tone audiometry. A total of 1236 participants were screened (mean age 37.8 ±17.9 years). Diagnostic testing was available for confirmation of hearing loss on participants who failed the screening. Results: Hearing loss prevalence was 17.5% across both clinics. Most hearing losses were bilateral (70.0%) and were of a sensorineural nature (84.2%). Conclusion: Hearing loss prevalence was comparable at both primary health care clinics. Participants 40 years and older were at significantly higher risk for hearing loss. The current study is the first attempt to establish hearing loss prevalence for primary health care clinics in South Africa.",
@@ -298,8 +298,8 @@ export const articlesData = [
 		title:
 			"Learning Experiences of Students Who Are Hard of Hearing in Higher Education: Case Study of a South African University",
 		authors: ["Diane Bell", "Estelle Swart"],
-		journal: "Social Inclusion",
-		year: "",
+		journal: "Students with Disabilities in Higher Education",
+		year: "2025",
 		doi: "10.17645/si.v6i4.1643",
 		abstract:
 			"Students who are hard of hearing (HOH) are being granted access to university increasingly, yet they remain significantly under-represented and under-supported, often resulting in poor academic outcomes with elevated levels of attrition. This situation places a growing obligation on universities to improve the support provided to these students in order to have a positive influence on their overall academic experience and eventual economic independence. This trend is relevant to South Africa, where Higher Education Institutions (HEIs) are accepting and registering students with a hearing loss but are not providing adequate academic support and inclusive curricula. Furthermore, in South Africa, almost no research has been conducted concerning students who are HOH in higher education regarding their teaching and learning needs or the coping strategies which they use to survive academically. However, what is known is that, of those HOH students who do enter higher education, many do not graduate successfully (up to 75%) and, of those that do graduate, manycontinuetobeexcludedfromprofessions.Theaimsofthisarticleweretoreportontheteachingandlearningexperiences of students who are HOH at a South African university, who prefer to make use of spoken language, to share the daily barriers with which they are faced, and to provide recommendations for teaching and learning, as well as curricula transformation. This study adds to the existing body of knowledge on this topic in South Africa and could be relevant in similar contexts.",

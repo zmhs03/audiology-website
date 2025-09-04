@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-// import ArticleCard from "../Components/ArticleCard";
-// import { articlesData as articles } from "../Data/articles";
+import ArticleCard from "../Components/ArticleCard";
+import { articlesData } from "../Data/articles";
 import ear from "../Assets/images/ear.jpg";
 import placeholder from "../Assets/images/placeholder.jpg";
 import "../Styles/awareness.css";
 
 function Awareness() {
+	const [featured, setFeatured] = useState([]);
 	const [currentSlide, setCurrentSlide] = useState(0);
+
+	useEffect(() => {
+		const shuffled = [...articlesData].sort(() => 0.5 - Math.random());
+		setFeatured(shuffled.slice(0, 3));
+	}, []);
 
 	// Gallery slides data - changed to use images instead of text content
 	const slides = [
@@ -51,7 +58,10 @@ function Awareness() {
 					style={{ transform: `translateX(-${currentSlide * 100}%)` }}
 				>
 					{slides.map((slide) => (
-						<div key={slide.id} className="slide">
+						<div
+							key={slide.id}
+							className="slide"
+						>
 							<div className="slide-content">
 								<img
 									src={slide.image}
@@ -64,7 +74,10 @@ function Awareness() {
 				</div>
 
 				{/* Navigation Arrows */}
-				<button onClick={prevSlide} className="slider-nav slider-nav-left">
+				<button
+					onClick={prevSlide}
+					className="slider-nav slider-nav-left"
+				>
 					<FaChevronLeft className="nav-icon" />
 				</button>
 
@@ -90,7 +103,17 @@ function Awareness() {
 			</section>
 
 			{/* Popular Articles Section */}
-
+			<section id="popular-articles">
+				<h2 className="section-heading">Popular Articles</h2>
+				<div className="popular-articles-grid">
+					{featured.map((article) => (
+						<ArticleCard
+							key={article.id}
+							article={article}
+						/>
+					))}
+				</div>
+			</section>
 			{/* Main Content Section */}
 			<section className="main-content-section">
 				<div className="container">
