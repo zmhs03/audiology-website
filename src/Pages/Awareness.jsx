@@ -171,7 +171,7 @@ function Awareness() {
 								{/* Hero-style text overlay */}
 								<div className="hero-text-overlay">
 									<div className="hero-text-content">
-										<h1 className="hero-title">{slide.title}</h1>
+										<h2 className="awareness-hero-title">{slide.title}</h2>
 										<p className="hero-description">{slide.description}</p>
 										<button
 											className="hero-cta-button"

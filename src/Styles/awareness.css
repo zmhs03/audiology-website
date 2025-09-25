@@ -146,7 +146,7 @@
 	pointer-events: auto;
 }
 
-.hero-title {
+.awareness-hero-title {
 	font-size: 3.5rem;
 	font-weight: 700;
 	color: var(--white);
@@ -474,7 +474,7 @@
 		max-width: calc(100% - 40px);
 	}
 
-	.hero-title {
+	.awareness-hero-title {
 		font-size: 1.8rem;
 		margin-bottom: var(--spacing-sm);
 	}
@@ -594,7 +594,7 @@
 		max-width: calc(100% - 80px);
 	}
 
-	.hero-title {
+	.awareness-hero-title {
 		font-size: 2.5rem;
 	}
 	.hero-description {
@@ -692,7 +692,7 @@
 		padding: 0 40px;
 		max-width: calc(100% - 120px);
 	}
-	.hero-title {
+	.awareness-hero-title {
 		font-size: 3rem;
 	}
 	.hero-description {
@@ -752,7 +752,7 @@
 		padding: 0 50px;
 		max-width: calc(100% - 140px);
 	}
-	.hero-title {
+	.awareness-awareness-hero-title {
 		font-size: 3.2rem;
 	}
 
@@ -777,7 +777,7 @@
 		max-width: 1400px;
 	}
 
-	.hero-title {
+	.awareness-hero-title {
 		font-size: 4rem;
 	}
 
@@ -852,7 +852,7 @@
 		height: 90vh;
 	}
 
-	.hero-title {
+	.awareness-hero-title {
 		font-size: 2rem;
 	}
 
