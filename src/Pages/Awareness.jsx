@@ -1,45 +1,137 @@
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useNavigate } from "react-router";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import ArticleCard from "../Components/ArticleCard";
 import { articlesData } from "../Data/articles";
-import ear from "../Assets/images/ear.jpg";
-import placeholder from "../Assets/images/placeholder.jpg";
+import gallery from "../Assets/images/gallery.jpg"; //<a href="https://www.freepik.com/free-photo/woman-wearing-headphones-side-view_34215954.htm">Image by freepik</a>
+import resources from "../Assets/images/resources.jpg"; //<a href="https://www.freepik.com/free-photo/young-student-working-assignment_22377289.htm">Image by freepik</a>
+import hearing_aid from "../Assets/images/hearing-aids.jpg"; //<a href="https://www.freepik.com/free-photo/hearing-aids-case-high-angle_32077715.htm">Image by freepik</a>
+import check_ear from "../Assets/images/check-ear.jpg"; //<a href="https://www.freepik.com/free-photo/clinic-otology-specialist-consulting-senior-patient-using-otoscope-check-ear-infection-hospital-otologist-examining-sick-retired-man-internal-ear-condition-while-doctor-cabinet_28175280.htm">Image by DC Studio on Freepik</a>
+import auidology_test from "../Assets/images/test.jpg";
+import construction from "../Assets/images/construction.jpg";
+import community from "../Assets/images/community.jpg";
+import earplug from "../Assets/images/earplug.jpg";
+
 import "../Styles/awareness.css";
 
 function Awareness() {
+	const navigate = useNavigate();
 	const [featured, setFeatured] = useState([]);
 	const [currentSlide, setCurrentSlide] = useState(0);
+
+	// Touch/Swipe functionality refs
+	const touchStartX = useRef(null);
+	const touchEndX = useRef(null);
+	const isDragging = useRef(false);
+	const sliderRef = useRef(null);
+
+	// Minimum swipe distance to trigger slide change
+	const MIN_SWIPE_DISTANCE = 50;
 
 	useEffect(() => {
 		const shuffled = [...articlesData].sort(() => 0.5 - Math.random());
 		setFeatured(shuffled.slice(0, 3));
 	}, []);
 
-	// Gallery slides data - changed to use images instead of text content
+	// Gallery slides data with descriptions
 	const slides = [
 		{
 			id: 1,
-			image: placeholder,
-			alt: "Ear image",
+			image: gallery,
+			alt: "Gallery image",
+			url: "/Gallery",
+			title: "Gallery",
+			description:
+				"Explore our comprehensive collection of hearing health images and educational materials.",
 		},
 		{
 			id: 2,
-			image: placeholder, // Replace with your actual image
-			alt: "Slide 2 image",
+			image: check_ear,
+			alt: "Prevention image",
+			url: "/Prevention",
+			title: "Prevention",
+			description:
+				"Discover proven strategies and tips to protect your hearing and prevent hearing loss.",
 		},
 		{
 			id: 3,
-			image: ear, // Replace with your actual image
-			alt: "Slide 3 image",
+			image: resources,
+			alt: "Resources image",
+			url: "/Resources",
+			title: "Resources",
+			description:
+				"Access valuable tools, guides, and information to support your hearing health journey.",
 		},
 		{
 			id: 4,
-			image: placeholder, // Replace with your actual image
-			alt: "Slide 4 image",
+			image: hearing_aid,
+			alt: "Hearing Health image",
+			url: "/Hearing-Health",
+			title: "Hearing Health",
+			description:
+				"Learn about hearing conditions, treatments, and maintaining optimal ear health.",
 		},
 	];
+
+	// Touch event handlers for mobile swipe
+	const handleTouchStart = useCallback((e) => {
+		touchStartX.current = e.targetTouches[0].clientX;
+		isDragging.current = false;
+	}, []);
+
+	const handleTouchMove = useCallback((e) => {
+		if (!touchStartX.current) return;
+
+		const currentTouch = e.targetTouches[0].clientX;
+		const diff = touchStartX.current - currentTouch;
+
+		// If user has moved more than 10px, consider it a drag
+		if (Math.abs(diff) > 10) {
+			isDragging.current = true;
+		}
+	}, []);
+
+	const handleTouchEnd = useCallback((e) => {
+		if (!touchStartX.current || !isDragging.current) return;
+
+		touchEndX.current = e.changedTouches[0].clientX;
+		const swipeDistance = touchStartX.current - touchEndX.current;
+		const isLeftSwipe = swipeDistance > MIN_SWIPE_DISTANCE;
+		const isRightSwipe = swipeDistance < -MIN_SWIPE_DISTANCE;
+
+		if (isLeftSwipe) {
+			nextSlide();
+		} else if (isRightSwipe) {
+			prevSlide();
+		}
+
+		// Reset touch values
+		touchStartX.current = null;
+		touchEndX.current = null;
+		isDragging.current = false;
+	}, []);
+
+	const handleSlideClick = (slide, event) => {
+		// Prevent navigation if dragging/swiping
+		if (isDragging.current) {
+			event.preventDefault();
+			event.stopPropagation();
+			return;
+		}
+
+		// Prevent navigation if clicking on navigation arrows, indicators, or hero content
+		if (
+			event.target.closest(".slider-nav") ||
+			event.target.closest(".slider-indicators") ||
+			event.target.closest(".hero-text-content")
+		) {
+			return;
+		}
+
+		// Navigate to internal route
+		navigate(slide.url);
+	};
 
 	const nextSlide = () => {
 		setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -52,7 +144,13 @@ function Awareness() {
 	return (
 		<div className="awareness">
 			{/* Hero Gallery Slider */}
-			<section className="hero-slider">
+			<section
+				id="hero-slider"
+				ref={sliderRef}
+				onTouchStart={handleTouchStart}
+				onTouchMove={handleTouchMove}
+				onTouchEnd={handleTouchEnd}
+			>
 				<div
 					className="slider-container"
 					style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -60,7 +158,9 @@ function Awareness() {
 					{slides.map((slide) => (
 						<div
 							key={slide.id}
-							className="slide"
+							className="slide clickable-slide"
+							onClick={(event) => handleSlideClick(slide, event)}
+							title={`Click to visit: ${slide.title}`}
 						>
 							<div className="slide-content">
 								<img
@@ -68,6 +168,22 @@ function Awareness() {
 									alt={slide.alt}
 									className="slide-image"
 								/>
+								{/* Hero-style text overlay */}
+								<div className="hero-text-overlay">
+									<div className="hero-text-content">
+										<h1 className="hero-title">{slide.title}</h1>
+										<p className="hero-description">{slide.description}</p>
+										<button
+											className="hero-cta-button"
+											onClick={(e) => {
+												e.stopPropagation();
+												navigate(slide.url);
+											}}
+										>
+											Learn More
+										</button>
+									</div>
+								</div>
 							</div>
 						</div>
 					))}
@@ -75,14 +191,20 @@ function Awareness() {
 
 				{/* Navigation Arrows */}
 				<button
-					onClick={prevSlide}
+					onClick={(e) => {
+						e.stopPropagation();
+						prevSlide();
+					}}
 					className="slider-nav slider-nav-left"
 				>
 					<FaChevronLeft className="nav-icon" />
 				</button>
 
 				<button
-					onClick={nextSlide}
+					onClick={(e) => {
+						e.stopPropagation();
+						nextSlide();
+					}}
 					className="slider-nav slider-nav-right"
 				>
 					<FaChevronRight className="nav-icon" />
@@ -93,7 +215,10 @@ function Awareness() {
 					{slides.map((_, index) => (
 						<button
 							key={index}
-							onClick={() => setCurrentSlide(index)}
+							onClick={(e) => {
+								e.stopPropagation();
+								setCurrentSlide(index);
+							}}
 							className={`indicator ${
 								index === currentSlide ? "indicator-active" : ""
 							}`}
@@ -114,16 +239,17 @@ function Awareness() {
 					))}
 				</div>
 			</section>
+
 			{/* Main Content Section */}
-			<section className="main-content-section">
+			<section id="main-content">
 				<div className="container">
 					<div className="content-header">
-						<h2 className="main-title">Lorem Ipsum is simply</h2>
+						<h2 className="main-title">Understanding Hearing Health</h2>
 						<p className="main-description">
-							Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-							amet, consectetur, adipisci velit, sed quia non numquam eius
-							modi tempora incidunt ut labore et dolore magnam aliquam
-							quaerat voluptatem.
+							Hearing health is often overlooked, yet everyday noise and
+							misinformation put millions at risk. The Awareness section
+							introduces key issues, showing why hearing protection matters
+							and how you can take action.
 						</p>
 					</div>
 
@@ -131,67 +257,60 @@ function Awareness() {
 					<div className="content-grid">
 						{/* Left Column */}
 						<div className="content-column">
-							<h3 className="column-title">Lorem Ipsum is simply dummy</h3>
+							<h4 className="subsection-title">Loud Noise Risks</h4>
 							<p className="column-text">
-								Lorem Ipsum has been the industry's standard dummy text
-								ever since the 1500s, when an unknown printer took a galley
-								of type and scrambled it to make a type specimen book.
+								Repeated exposure to loud environments can cause
+								irreversible hearing damage.
 							</p>
 
 							<img
-								src={placeholder}
-								alt="Placeholder"
-								className="placeholder-image"
+								src={construction}
+								alt="Carpenter wearing protective headphones while working"
+								className="top-image-1"
 							/>
 
-							<h4 className="subsection-title">
-								Lorem Ipsum is Simply Dummy
-							</h4>
+							<h4 className="subsection-title">Everyday Prevention</h4>
 							<p className="column-text">
-								Lorem Ipsum has been the industry's standard dummy text
-								ever since the 1500s, when an unknown printer took a galley
-								of type and scrambled it to make a type specimen book.
+								Lowering device volume, using ear plugs at festivals or
+								concerts, and taking listening breaks protect hearing over
+								a lifetime.
 							</p>
+
+							<img
+								src={earplug}
+								alt="Construction worker putting on ear plugs"
+								className="bottom-image-1"
+							/>
 						</div>
 
 						{/* Right Column */}
 						<div className="content-column">
-							<h3 className="column-title">Lorem Ipsum is simply dummy</h3>
+							<h4 className="subsection-title">Early Detection</h4>
 							<p className="column-text">
-								Lorem Ipsum has been the industry's standard dummy text
-								ever since the 1500s, when an unknown printer took a galley
-								of type and scrambled it to make a type specimen book.
+								Regular hearing checks catch problems early and improve
+								outcomes. Simple screening can reveal issues long before
+								they affect daily life.
 							</p>
 
 							<img
-								src={placeholder}
-								alt="Placeholder"
-								className="placeholder-image"
+								src={auidology_test}
+								alt="Audiology test"
+								className="top-image-2"
 							/>
 
-							<h4 className="subsection-title">
-								Lorem Ipsum is simply dummy
-							</h4>
+							<h4 className="subsection-title">Stories and Support</h4>
 							<p className="column-text">
-								Lorem Ipsum has been the industry's standard dummy text
-								ever since the 1500s, when an unknown printer took a galley
-								of type and scrambled it to make a type specimen book.
+								Real experiences show why support and stigma-free
+								conversation matter. Hearing aids and community services
+								(i.e. counselling, audiology clinics, and peer groups)
+								improve quality of life for many.
 							</p>
+							<img
+								src={community}
+								alt="Someone helping someone else with putting on their hearing aids"
+								className="bottom-image-2"
+							/>
 						</div>
-					</div>
-
-					{/* Bottom Two Column Layout */}
-					<div className="bottom-images">
-						<img
-							src={placeholder}
-							alt="Placeholder"
-							className="bottom-image-placeholder"
-						/>
-						<img
-							src={placeholder}
-							alt="Placeholder"
-							className="bottom-image-placeholder"
-						/>
 					</div>
 				</div>
 			</section>
