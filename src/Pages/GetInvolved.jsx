@@ -1,5 +1,45 @@
+import { useState } from "react";
 import "../Styles/involved.css";
 import placeholder from "../Assets/images/placeholder.jpg";
+
+function SlideCard({ image, title, description, linkS }) {
+	const [isHovered, setIsHovered] = useState(false);
+
+	const handleView = () => {
+		window.open(link, "_blank", "nopoener, noreferrer");
+	};
+
+	return (
+		<div
+			className={"card slide-card ${isHovered? : }"}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
+		>
+			<div className="slide-card-inner">
+				<div className="slide-card-image">
+					<img
+						src={image}
+						alt={title}
+						className="card-image"
+					/>
+				</div>
+
+				<div className="slide-info-info">
+					<div className="slide-card-content">
+						<h4>{title}</h4>
+						<p>{description}</p>
+						<button
+							className="view-button"
+							onClick={handleView}
+						>
+							View
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
 
 function getInvolved() {
 	return (
@@ -48,6 +88,12 @@ function getInvolved() {
 						and raise public awareness.
 					</p>
 					<div className="cards-grid">
+						<SlideCard
+							image={placeholder}
+							title="Foundation for Children with Hearing Loss in Southern Africa"
+							description="This is a description"
+							link=""
+						></SlideCard>
 						<div className="card">
 							<div className="card-image">
 								<img
