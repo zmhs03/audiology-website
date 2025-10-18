@@ -14,29 +14,24 @@ function Navbar() {
 		);
 	};
 
+	const closeDropdown = () => {
+		setActiveDropdown(null);
+	};
+
 	const closeDrawer = () => {
 		setIsDrawerOpen(false);
 		setActiveDropdown(null);
 	};
 
 	const dropdownItems = {
-		AboutUs: [
-			{ to: "/AboutUs", label: "About Hear&Now" },
-			{ to: "/Hearing-Health", label: "Hearing Health" },
-			{ to: "/World-Hearing-Day", label: "World Hearing Day" },
-		],
+		
 		Awareness: [
 			{ to: "/Awareness", label: "Overview" },
 			{ to: "/Gallery", label: "Gallery" },
 			{ to: "/Prevention", label: "Prevention" },
 			{ to: "/Resources", label: "Resources" },
 		],
-		GetInvolved: [
-			{ to: "/Get-Involved", label: "Get Involved" },
-			{ to: "/Fundraising", label: "Fundraising" },
-			{ to: "/Volunteer", label: "Volunteer" },
-			{ to: "/Advocacy", label: "Advocacy" },
-		],
+		
 	};
 
 	return (
@@ -61,8 +56,19 @@ function Navbar() {
 					</Link>
 				</li>
 
+				<li className="nav-item">
+					<Link to="/AboutUs" className="nav-links">
+						About
+					</Link>
+				</li>
+
 				{Object.entries(dropdownItems).map(([key, items]) => (
-					<li key={key} className="nav-item dropdown">
+					<li
+						key={key}
+						className="nav-item dropdown"
+						onMouseEnter={() => setActiveDropdown(key)}
+						onMouseLeave={closeDropdown}
+					>
 						<div className="nav-item-container">
 							<Link to={items[0].to} className="nav-links main-link">
 								{key.replace(/([A-Z])/g, " $1").trim()}

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-	Volume2,
 	Music,
 	Users,
 	Headphones,
@@ -33,15 +32,15 @@ function Prevention() {
 		},
 		{
 			id: 3,
-			title: "Safe Listening Practices",
+			title: "A Beginner's Guide to Hearing Health",
 			description: "Daily habits for long-term hearing health",
 			icon: Headphones,
 			color: "primary",
 		},
 		{
 			id: 4,
-			title: "Workplace Hearing Protection",
-			description: "Protecting your ears in noisy environments",
+			title: "Visualising Decibels",
+			description: "Examples that visualise decibels with everyday examples",
 			icon: Shield,
 			color: "secondary",
 		},

@@ -24,16 +24,11 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/AboutUs" element={<AboutUs />} />
-				<Route path="/Hearing-Health" element={<HearingHealth />} />
-				<Route path="/World-Hearing-Day" element={<WorldHearingDay />} />
 				<Route path="/Awareness" element={<Awareness />} />
 				<Route path="/Gallery" element={<Gallery />} />
 				<Route path="/Prevention" element={<Prevention />} />
 				<Route path="/Resources" element={<Resources />} />
 				<Route path="/Get-Involved" element={<GetInvolved />} />
-				<Route path="/Fundraising" element={<Fundraising />} />
-				<Route path="/Volunteer" element={<Volunteer />} />
-				<Route path="/Advocacy" element={<Advocacy />} />
 				<Route path="/Support" element={<Support />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
