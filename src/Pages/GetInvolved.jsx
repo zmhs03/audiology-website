@@ -1,47 +1,71 @@
-import { useState } from "react";
 import "../Styles/involved.css";
 import placeholder from "../Assets/images/placeholder.jpg";
+import CardSlider from '../Components/CardSlider';
 
-function SlideCard({ image, title, description, linkS }) {
-	const [isHovered, setIsHovered] = useState(false);
+function GetInvolved() {
+	const fundraisingCards = [
+		{
+			image: placeholder,
+			title: "Foundation for Children with Hearing Loss in Southern Africa",
+			description: "Foundation for Children with Hearing Loss in Southern Africa",
+			link: "https://www.globalgiving.org/donate/102379/foundation-for-children-with-hearing-loss-in-southern-a/"
+		},
+		{
+			image: placeholder,
+			title: "High Hopes",
+			description: "High Hopes",
+			link: "https://devman.wits.ac.za/Devman/hihopes/giving/"
+		},
+		{
+			image: placeholder,
+			title: "Carel du Toit Centre",
+			description: "Join our team in spreading awareness about hearing health.",
+			link: "https://careldutoit.co.za/donation/"
+		},
+		{
+			image: placeholder,
+			title: "The Gift of Hearing",
+			description: "Join our team in spreading awareness about hearing health.",
+			link: "https://www.dischem.co.za/the-gift-of-hearing"
+		},
+		{
+			image: placeholder,
+			title: "Hearo",
+			description: "Join our team in spreading awareness about hearing health.",
+			link: "https://www.hearo.co.za/donate/"
+		}
+	];
 
-	const handleView = () => {
-		window.open(link, "_blank", "nopoener, noreferrer");
-	};
+	const volunteeringCards = [
+		{
+			image: placeholder,
+			title: "Socigo",
+			description: "Support local initiatives",
+			link: "https://example.com/socigo"
+		},
+		{
+			image: placeholder,
+			title: "High Hopes",
+			description: "High Hopes",
+			link: "https://devman.wits.ac.za/Devman/hihopes/giving/"
+		},
+		{
+			image: placeholder,
+			title: "Hear in Africa",
+			description: "Join our team in spreading awareness about hearing health.",
+			link: "https://hearinafrica.com/outreach-projects/"
+		}
+	];
 
-	return (
-		<div
-			className={"card slide-card ${isHovered? : }"}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-		>
-			<div className="slide-card-inner">
-				<div className="slide-card-image">
-					<img
-						src={image}
-						alt={title}
-						className="card-image"
-					/>
-				</div>
+	const campaignsCards = [
+		{
+			image: placeholder,
+			title: "World Hearing Day",
+			description: "A day dedicated to raising hearing awareness",
+			link: "https://worldhearingday.org/"
+		}
+	];
 
-				<div className="slide-info-info">
-					<div className="slide-card-content">
-						<h4>{title}</h4>
-						<p>{description}</p>
-						<button
-							className="view-button"
-							onClick={handleView}
-						>
-							View
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
-}
-
-function getInvolved() {
 	return (
 		<div className="get-involved">
 			{/* Header Section */}
@@ -87,47 +111,7 @@ function getInvolved() {
 						sufficient funds to undertake important hearing loss research
 						and raise public awareness.
 					</p>
-					<div className="cards-grid">
-						<SlideCard
-							image={placeholder}
-							title="Foundation for Children with Hearing Loss in Southern Africa"
-							description="This is a description"
-							link=""
-						></SlideCard>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="pagination">
-						<span className="dot active"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-					</div>
+					<CardSlider cards={fundraisingCards} />
 				</div>
 			</section>
 
@@ -140,92 +124,24 @@ function getInvolved() {
 						hearing health awareness and provide critical support to those
 						with hearing loss.
 					</p>
-					<div className="cards-grid">
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="pagination">
-						<span className="dot active"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-					</div>
+					<CardSlider cards={volunteeringCards} />
 				</div>
 			</section>
 
-			{/* Advocacy Section */}
+			{/* Campaign Section */}
 			<section className="involvement-section">
 				<div className="container">
-					<h3>Advocacy</h3>
+					<h3>Campaigns</h3>
 					<p>
 						Support our advocacy efforts to improve access to hearing
 						healthcare services and promote hearing health policies at all
 						levels of government.
 					</p>
-					<div className="cards-grid">
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-						<div className="card">
-							<div className="card-image">
-								<img
-									src={placeholder}
-									alt="Placeholder"
-									className="placeholder-image"
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="pagination">
-						<span className="dot active"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-					</div>
+					<CardSlider cards={campaignsCards} />
 				</div>
 			</section>
 		</div>
 	);
 }
 
-export default getInvolved;
+export default GetInvolved;
