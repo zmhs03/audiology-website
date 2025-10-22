@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import {
 	Music,
 	Users,
@@ -13,36 +14,34 @@ import "../Styles/prevention.css";
 
 function Prevention() {
 	const [activeTab, setActiveTab] = useState("festivals");
+	const navigate = useNavigate();
 
 	const guides = [
 		{
 			id: 1,
-			title: "Concert Safety Guide",
-			description:
-				"Essential tips for protecting your hearing at live music events",
-			icon: Music,
-			color: "primary",
-		},
-		{
-			id: 2,
-			title: "Festival Survival Kit",
-			description: "Multi-day event hearing protection strategies",
-			icon: Users,
-			color: "secondary",
-		},
-		{
-			id: 3,
 			title: "A Beginner's Guide to Hearing Health",
 			description: "Daily habits for long-term hearing health",
 			icon: Headphones,
 			color: "primary",
+			route: "/guide/hearing-health",
 		},
 		{
-			id: 4,
-			title: "Visualising Decibels",
-			description: "Examples that visualise decibels with everyday examples",
-			icon: Shield,
+			id: 2,
+			title: "Concerts, Festivals and Everything In-Between",
+			description:
+				"Essential tips for protecting your hearing at live music events",
+			icon: Music,
 			color: "secondary",
+			route: "/guide/event-safety",
+		},
+		{
+			id: 3,
+			title: "Visualising Decibels",
+			description:
+				"Examples that visualise decibels with everyday scenarios",
+			icon: Shield,
+			color: "primary",
+			route: "/guide/visualising-decibels",
 		},
 	];
 
@@ -74,6 +73,10 @@ function Prevention() {
 		document
 			.getElementById("quick-tips-section")
 			.scrollIntoView({ behavior: "smooth" });
+	};
+
+	const handleGuideClick = (route) => {
+		navigate(route);
 	};
 
 	return (
@@ -124,6 +127,7 @@ function Prevention() {
 							<div
 								key={guide.id}
 								className="guide-card"
+								onClick={() => handleGuideClick(guide.route)}
 							>
 								<div className={`guide-icon guide-icon-${guide.color}`}>
 									<Icon size={28} />

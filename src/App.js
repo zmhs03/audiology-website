@@ -1,15 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
-import HearingHealth from "./Pages/HearingHealth";
-import WorldHearingDay from "./Pages/WorldHearingDay";
 import Awareness from "./Pages/Awareness";
 import GetInvolved from "./Pages/GetInvolved";
-import Advocacy from "./Pages/Advocacy";
-import Fundraising from "./Pages/Fundraising";
 import Gallery from "./Pages/Gallery";
-import Volunteer from "./Pages/Volunteer";
 import Prevention from "./Pages/Prevention";
+import HealthGuide from "./Pages/Guides/HealthGuide";
+import DecibelGuide from "./Pages/Guides/DecibelGuide";
+import EventsGuide from "./Pages/Guides/EventsGuide";
 import Resources from "./Pages/Resources";
 import Support from "./Pages/Support";
 import NotFound from "./Pages/NotFound";
@@ -22,15 +20,54 @@ function App() {
 		<BrowserRouter basename="/audiology-website">
 			<Navbar />
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/AboutUs" element={<AboutUs />} />
-				<Route path="/Awareness" element={<Awareness />} />
-				<Route path="/Gallery" element={<Gallery />} />
-				<Route path="/Prevention" element={<Prevention />} />
-				<Route path="/Resources" element={<Resources />} />
-				<Route path="/Get-Involved" element={<GetInvolved />} />
-				<Route path="/Support" element={<Support />} />
-				<Route path="*" element={<NotFound />} />
+				<Route
+					path="/"
+					element={<Home />}
+				/>
+				<Route
+					path="/AboutUs"
+					element={<AboutUs />}
+				/>
+				<Route
+					path="/Awareness"
+					element={<Awareness />}
+				/>
+				<Route
+					path="/Gallery"
+					element={<Gallery />}
+				/>
+				<Route
+					path="/Prevention"
+					element={<Prevention />}
+				/>
+				<Route
+					path="/guide/hearing-health"
+					element={<HealthGuide />}
+				/>
+				<Route
+					path="/guide/event-safety"
+					element={<EventsGuide />}
+				/>
+				<Route
+					path="/guide/visualising-decibels"
+					element={<DecibelGuide />}
+				/>
+				<Route
+					path="/Resources"
+					element={<Resources />}
+				/>
+				<Route
+					path="/Get-Involved"
+					element={<GetInvolved />}
+				/>
+				<Route
+					path="/Support"
+					element={<Support />}
+				/>
+				<Route
+					path="*"
+					element={<NotFound />}
+				/>
 			</Routes>
 			<Footer />
 		</BrowserRouter>
