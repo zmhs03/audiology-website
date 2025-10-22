@@ -24,19 +24,20 @@ function Navbar() {
 	};
 
 	const dropdownItems = {
-		
 		Awareness: [
 			{ to: "/Awareness", label: "Overview" },
 			{ to: "/Gallery", label: "Gallery" },
 			{ to: "/Prevention", label: "Prevention" },
 			{ to: "/Resources", label: "Resources" },
 		],
-		
 	};
 
 	return (
 		<nav className="navbar">
-			<Link to="/" className="navbar-logo">
+			<Link
+				to="/"
+				className="navbar-logo"
+			>
 				Hear & Now
 			</Link>
 
@@ -51,13 +52,19 @@ function Navbar() {
 			{/* Desktop menu */}
 			<ul className="nav-menu">
 				<li className="nav-item">
-					<Link to="/" className="nav-links">
+					<Link
+						to="/"
+						className="nav-links"
+					>
 						Home
 					</Link>
 				</li>
 
 				<li className="nav-item">
-					<Link to="/AboutUs" className="nav-links">
+					<Link
+						to="/AboutUs"
+						className="nav-links"
+					>
 						About
 					</Link>
 				</li>
@@ -70,7 +77,10 @@ function Navbar() {
 						onMouseLeave={closeDropdown}
 					>
 						<div className="nav-item-container">
-							<Link to={items[0].to} className="nav-links main-link">
+							<Link
+								to={items[0].to}
+								className="nav-links main-link"
+							>
 								{key.replace(/([A-Z])/g, " $1").trim()}
 							</Link>
 							<button
@@ -84,7 +94,10 @@ function Navbar() {
 							<ul className="dropdown-menu">
 								{items.map((item, i) => (
 									<li key={i}>
-										<Link to={item.to} className="dropdown-link">
+										<Link
+											to={item.to}
+											className="dropdown-link"
+										>
 											{item.label}
 										</Link>
 									</li>
@@ -95,7 +108,19 @@ function Navbar() {
 				))}
 
 				<li className="nav-item">
-					<Link to="/Support" className="nav-links">
+					<Link
+						to="/Get-Involved"
+						className="nav-links"
+					>
+						Get Involved
+					</Link>
+				</li>
+
+				<li className="nav-item">
+					<Link
+						to="/Support"
+						className="nav-links"
+					>
 						Support
 					</Link>
 				</li>
@@ -112,7 +137,10 @@ function Navbar() {
 			<div className={`drawer ${isDrawerOpen ? "open" : ""}`}>
 				<ul className="drawer-menu">
 					<li>
-						<Link to="/" onClick={closeDrawer}>
+						<Link
+							to="/"
+							onClick={closeDrawer}
+						>
 							Home
 						</Link>
 					</li>
@@ -129,7 +157,10 @@ function Navbar() {
 								<ul className="drawer-submenu">
 									{items.map((item, i) => (
 										<li key={i}>
-											<Link to={item.to} onClick={closeDrawer}>
+											<Link
+												to={item.to}
+												onClick={closeDrawer}
+											>
 												{item.label}
 											</Link>
 										</li>
@@ -140,12 +171,18 @@ function Navbar() {
 					))}
 
 					<li>
-						<Link to="/Support" onClick={closeDrawer}>
+						<Link
+							to="/Support"
+							onClick={closeDrawer}
+						>
 							Support
 						</Link>
 					</li>
 					<li className="drawer-donate">
-						<button className="donate-btn" onClick={closeDrawer}>
+						<button
+							className="donate-btn"
+							onClick={closeDrawer}
+						>
 							Donate
 						</button>
 					</li>
