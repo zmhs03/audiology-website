@@ -1,44 +1,143 @@
+/* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-	--primary-color: #00c5cd;
-	--secondary-color: #2c387f;
-	--primary-light: rgba(0, 197, 205, 0.1);
-	--secondary-light: rgba(44, 56, 127, 0.1);
+	/* Colors */
+	--primary-colour: #2c387f;
+	--primary-blue-dark: #1e2a5f;
+	--text-dark: #1a202c;
+	--text-medium: #2d3748;
+	--text-light: #64748b;
+	--text-muted: #cbd5e0;
+	--background-light: #fff;
+	--white: #ffffff;
+	--black: #000000;
+
+	/* Spacing - Default (Desktop) */
+	--spacing-xs: 8px;
+	--spacing-sm: 12px;
+	--spacing-md: 20px;
+	--spacing-lg: 30px;
+	--spacing-xl: 50px;
+	--spacing-2xl: 80px;
+
+	/* Border radius */
+	--radius-sm: 6px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-xl: 20px;
+	--radius-full: 50%;
+
+	/* Transitions */
+	--transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--transition-slow: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* Shadows */
+	--shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 15px 35px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.2);
+	--shadow-button: 0 6px 20px rgba(44, 56, 127, 0.4);
 }
 
-/* Container */
+/* === Container === */
 .guide-container {
+	max-width: 1200px;
+	margin: 4rem auto 0 auto;
+	padding: 0 var(--spacing-md);
+	width: 100%;
+	color: #333;
+	line-height: 1.7;
+}
+/* Back Button / Navigation Bar */
+.guide-nav {
+	display: flex;
+	justify-content: flex-start;
 	max-width: 900px;
-	margin: 0 auto;
-	background: #ffffff;
+	margin: 1rem auto 0.5rem auto;
+	padding: 0 1rem;
 }
 
-/* Header */
+.back-btn {
+	background: none;
+	border: none;
+	color: #00c5cd;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.back-button:hover {
+	color: #2c387f;
+	text-decoration: none;
+}
+
+/* === Hero Header === */
 .guide-header {
-	background: var(--secondary-color);
+	position: relative;
+	height: 380px;
 	color: white;
-	padding: 4rem 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
+	padding: 0 2rem;
+	overflow: hidden;
 }
 
-.guide-header-content h1 {
-	font-size: 2.5rem;
+.guide-hero {
+	background: #fff;
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 0;
+}
+
+.guide-hero-text {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.guide-hero-text h2 {
+	font-size: 2rem;
 	font-weight: 700;
-	margin: 0 0 1rem 0;
-	line-height: 1.2;
+	color: #111;
+	margin: 0.5rem 0;
+	line-height: 1.3;
 }
 
-.guide-header-content p {
-	font-size: 1.125rem;
-	margin: 0;
-	opacity: 0.9;
+.guide-hero-text p {
+	font-size: 1rem;
+	color: #555;
+	margin: 0.25rem 0;
 }
 
-/* Content */
+.guide-meta {
+	font-size: 0.9rem;
+	color: #777;
+	margin-top: 0.25rem;
+}
+
+.guide-hero-image {
+	width: 100%;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	margin-top: 0.75rem;
+}
+
+.hero-img {
+	width: 100%;
+	max-width: 900px;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+/* === Content === */
 .guide-content {
 	padding: 3rem 2rem;
 }
 
-/* Sections */
+/* === Sections === */
 .guide-section {
 	margin-bottom: 3rem;
 	padding-bottom: 2rem;
@@ -63,7 +162,7 @@
 	margin: 0;
 }
 
-/* Lists */
+/* === Lists === */
 .section-list {
 	list-style: none;
 	padding: 0;
@@ -79,7 +178,7 @@
 	position: relative;
 }
 
-.section-list li:before {
+.section-list li::before {
 	content: "•";
 	color: var(--primary-color);
 	font-weight: bold;
@@ -89,7 +188,7 @@
 	top: -0.125rem;
 }
 
-/* Safety Levels */
+/* === Safety Levels === */
 .safety-levels {
 	margin-top: 0.5rem;
 }
@@ -120,7 +219,7 @@
 	color: #333;
 }
 
-/* Warning Signs */
+/* === Warning Signs === */
 .warning-signs {
 	margin-top: 0.5rem;
 }
@@ -143,12 +242,42 @@
 	color: #333;
 }
 
-/* TL;DR */
+/* === Guide Image === */
+.guide-image {
+	margin: 3rem 0;
+	display: flex;
+	justify-content: center;
+}
+
+.placeholder-img {
+	width: 100%;
+	max-width: 750px;
+	border-radius: 1rem;
+	object-fit: cover;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.placeholder-img:hover {
+	transform: scale(1.02);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guide-image figcaption {
+	text-align: center;
+	font-size: 0.9375rem;
+	color: #555;
+	margin-top: 0.75rem;
+	font-style: italic;
+}
+
+/* === TL;DR Section === */
 .guide-tldr {
 	margin-top: 3rem;
 	padding: 2rem;
 	background: var(--primary-color);
 	color: white;
+	border-radius: 0.75rem;
 }
 
 .guide-tldr h2 {
@@ -164,10 +293,11 @@
 	margin: 0;
 }
 
-/* Responsive */
+/* === Responsive === */
 @media (max-width: 768px) {
 	.guide-header {
-		padding: 3rem 1.5rem;
+		height: 300px;
+		padding: 0 1.5rem;
 	}
 
 	.guide-header-content h1 {
@@ -186,9 +316,8 @@
 		font-size: 1.5rem;
 	}
 
-	.safety-level-item {
-		flex-direction: column;
-		gap: 0.5rem;
+	.placeholder-img {
+		max-width: 100%;
 	}
 
 	.guide-tldr {

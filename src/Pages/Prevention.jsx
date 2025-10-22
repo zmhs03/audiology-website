@@ -43,6 +43,15 @@ function Prevention() {
 			color: "primary",
 			route: "/guide/visualising-decibels",
 		},
+		{
+			id: 4,
+			title: "Everyday Noises You Don’t Notice",
+			description:
+				"Examples that visualise decibels with everyday scenarios",
+			icon: Shield,
+			color: "primary",
+			route: "/guide/everyday-noises",
+		},
 	];
 
 	const quickTips = {

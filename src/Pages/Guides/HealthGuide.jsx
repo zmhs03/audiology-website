@@ -1,19 +1,38 @@
+import { useNavigate } from "react-router";
 import "../../Styles/healthguide.css";
-
+import heroImage from "../../Assets/images/placeholder.jpg";
+import { IoMdArrowRoundBack } from "react-icons/io";
 const HealthGuide = ({
 	title = "A Beginner's Guide to Hearing Health",
 	subtitle = "Everything you need to know to keep your ears healthy",
 	sections = defaultSections,
 }) => {
+	const navigate = useNavigate();
 	return (
 		<div className="guide-container">
-			<header className="guide-header">
-				<div className="guide-header-content">
-					<h1>{title}</h1>
+			<div className="guide-nav">
+				<button
+					className="back-btn"
+					onClick={() => navigate("/prevention")}
+				>
+					<IoMdArrowRoundBack />
+					Back to Prevention
+				</button>
+			</div>
+			<header className="guide-hero">
+				<div className="guide-hero-text">
+					<h2>{title}</h2>
 					{subtitle && <p>{subtitle}</p>}
 				</div>
-			</header>
 
+				<div className="guide-hero-image">
+					<img
+						src={heroImage}
+						alt="Everyday noise awareness"
+						className="hero-img"
+					/>
+				</div>
+			</header>
 			<div className="guide-content">
 				{sections.map((section, idx) => (
 					<Section
@@ -23,7 +42,7 @@ const HealthGuide = ({
 				))}
 
 				<div className="guide-tldr">
-					<h2>TL;DR</h2>
+					<h3>TL;DR</h3>
 					<p>
 						Protect your ears: keep volume moderate, limit exposure to loud
 						environments, use ear protection at concerts or noisy work

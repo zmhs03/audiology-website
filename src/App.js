@@ -8,6 +8,7 @@ import Prevention from "./Pages/Prevention";
 import HealthGuide from "./Pages/Guides/HealthGuide";
 import DecibelGuide from "./Pages/Guides/DecibelGuide";
 import EventsGuide from "./Pages/Guides/EventsGuide";
+import EverydayGuide from "./Pages/Guides/EverydayGuide";
 import Resources from "./Pages/Resources";
 import Support from "./Pages/Support";
 import NotFound from "./Pages/NotFound";
@@ -51,6 +52,10 @@ function App() {
 				<Route
 					path="/guide/visualising-decibels"
 					element={<DecibelGuide />}
+				/>
+				<Route
+					path="/guide/everyday-noises"
+					element={<EverydayGuide />}
 				/>
 				<Route
 					path="/Resources"
