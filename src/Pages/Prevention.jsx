@@ -124,9 +124,6 @@ function Prevention() {
 			<div className="guides-section">
 				<div className="section-header">
 					<h2 className="section-title">Hearing Protection Guides</h2>
-					<p className="section-subtitle">
-						Comprehensive resources for every situation
-					</p>
 				</div>
 
 				<div className="guides-grid">
