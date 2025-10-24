@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/audiology-website/static/css/main.00740322.css",
-    "main.js": "/audiology-website/static/js/main.09260220.js",
+    "main.js": "/audiology-website/static/js/main.746db5f2.js",
     "static/media/hearing-aids.jpg": "/audiology-website/static/media/hearing-aids.aa35ad3bb7a1f0921ad8.jpg",
     "static/media/resources.jpg": "/audiology-website/static/media/resources.e3cac34ca0606c902a67.jpg",
     "static/media/construction.jpg": "/audiology-website/static/media/construction.98cc50919a133ff5a4b2.jpg",
@@ -13,10 +13,10 @@
     "static/media/earplug.jpg": "/audiology-website/static/media/earplug.47055c85b857649a467d.jpg",
     "index.html": "/audiology-website/index.html",
     "main.00740322.css.map": "/audiology-website/static/css/main.00740322.css.map",
-    "main.09260220.js.map": "/audiology-website/static/js/main.09260220.js.map"
+    "main.746db5f2.js.map": "/audiology-website/static/js/main.746db5f2.js.map"
   },
   "entrypoints": [
     "static/css/main.00740322.css",
-    "static/js/main.09260220.js"
+    "static/js/main.746db5f2.js"
   ]
 }
