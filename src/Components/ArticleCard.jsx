@@ -19,7 +19,6 @@ const ArticleCard = ({ article }) => {
 		}
 	};
 
-	//Text will be truncated to a reasonable length for display
 	const truncateText = (text, maxLength = 200) => {
 		if (text.length <= maxLength) return text;
 		return text.substring(0, maxLength) + "...";

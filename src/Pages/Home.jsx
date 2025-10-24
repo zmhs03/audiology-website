@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
 import "../Styles/home.css";
 import placeholder from "../Assets/images/placeholder.jpg";

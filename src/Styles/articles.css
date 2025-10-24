@@ -197,10 +197,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-	/* .article-list-container,
+	.article-list-container,
 	.articles-container {
 		padding: 1rem;
-	} */
+	}
 
 	.article-card {
 		padding: 1rem;

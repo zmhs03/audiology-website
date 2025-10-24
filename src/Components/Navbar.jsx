@@ -172,6 +172,14 @@ function Navbar() {
 
 					<li>
 						<Link
+							to="/Get-Involved"
+							onClick={closeDrawer}
+						>
+							Get Involved
+						</Link>
+					</li>
+					<li>
+						<Link
 							to="/Support"
 							onClick={closeDrawer}
 						>
