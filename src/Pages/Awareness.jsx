@@ -1,3 +1,14 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+	Navigation,
+	Pagination,
+	Autoplay,
+	EffectFade,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router";
 import { FaChevronLeft } from "react-icons/fa";
@@ -31,7 +42,7 @@ function Awareness() {
 
 	useEffect(() => {
 		const shuffled = [...articlesData].sort(() => 0.5 - Math.random());
-		setFeatured(shuffled.slice(0, 3));
+		setFeatured(shuffled.slice(0, 6));
 	}, []);
 
 	// Gallery slides data with descriptions
@@ -230,14 +241,31 @@ function Awareness() {
 			{/* Popular Articles Section */}
 			<section id="popular-articles">
 				<h2 className="section-heading">Popular Articles</h2>
-				<div className="popular-articles-grid">
+				<Swiper
+					modules={[Navigation, Pagination, Autoplay, EffectFade]}
+					spaceBetween={30}
+					slidesPerView={1}
+					loop={true}
+					autoplay={{
+						delay: 4000,
+						disableOnInteraction: false,
+					}}
+					pagination={{ clickable: true }}
+					navigation
+					breakpoints={{
+						768: { slidesPerView: 2 },
+						1024: { slidesPerView: 3 },
+					}}
+					className="featured-articles-carousel"
+				>
 					{featured.map((article) => (
-						<ArticleCard
-							key={article.id}
-							article={article}
-						/>
+						<SwiperSlide key={article.id}>
+							<div className="fade-in">
+								<ArticleCard article={article} />
+							</div>
+						</SwiperSlide>
 					))}
-				</div>
+				</Swiper>
 			</section>
 
 			{/* Main Content Section */}

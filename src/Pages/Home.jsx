@@ -1,5 +1,16 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+	Navigation,
+	Pagination,
+	Autoplay,
+	EffectFade,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 import "../Styles/home.css";
 import placeholder from "../Assets/images/placeholder.jpg";
 import hero from "../Assets/images/hero.jpg";
@@ -10,13 +21,14 @@ function Home() {
 	const [featured, setFeatured] = useState([]);
 
 	useEffect(() => {
+		// Shuffle and select 3 random featured articles
 		const shuffled = [...articlesData].sort(() => 0.5 - Math.random());
-		setFeatured(shuffled.slice(0, 3));
+		setFeatured(shuffled.slice(0, 5));
 	}, []);
 
 	return (
 		<div className="home-container">
-			{/* Hero Section */}
+			{/* === HERO SECTION === */}
 			<section className="hero-section">
 				<img
 					src={hero}
@@ -28,7 +40,7 @@ function Home() {
 				</div>
 			</section>
 
-			{/* Featured Content Section */}
+			{/* === FEATURED CONTENT SECTION === */}
 			<section className="featured-content-section">
 				<div className="featured-content-container">
 					<div className="featured-content-grid">
@@ -38,13 +50,14 @@ function Home() {
 							</h2>
 							<p className="featured-description">
 								Find out everything that happened on this year's World
-								Hearing Day, from events to compaigns.
+								Hearing Day — from events to campaigns that raised
+								awareness about hearing health.
 							</p>
 							<button className="featured-button">Read More</button>
 						</div>
+
 						<div className="featured-visual">
 							<div className="circles-container">
-								{/* Large light gray circle */}
 								<div className="circle-large">
 									<img
 										src={placeholder}
@@ -52,7 +65,6 @@ function Home() {
 										className="circle-image"
 									/>
 								</div>
-								{/* Smaller dark gray circle */}
 								<div className="circle-small">
 									<img
 										src={placeholder}
@@ -65,16 +77,36 @@ function Home() {
 					</div>
 				</div>
 			</section>
+
+			{/* === FEATURED ARTICLES SECTION === */}
 			<section id="featured-articles">
 				<h2 className="section-heading">Featured Articles</h2>
-				<div className="featured-articles-grid">
+
+				<Swiper
+					modules={[Navigation, Pagination, Autoplay, EffectFade]}
+					spaceBetween={30}
+					slidesPerView={1}
+					loop={true}
+					autoplay={{
+						delay: 4000,
+						disableOnInteraction: false,
+					}}
+					pagination={{ clickable: true }}
+					navigation
+					breakpoints={{
+						768: { slidesPerView: 2 },
+						1024: { slidesPerView: 3 },
+					}}
+					className="featured-articles-carousel"
+				>
 					{featured.map((article) => (
-						<ArticleCard
-							key={article.id}
-							article={article}
-						/>
+						<SwiperSlide key={article.id}>
+							<div className="fade-in">
+								<ArticleCard article={article} />
+							</div>
+						</SwiperSlide>
 					))}
-				</div>
+				</Swiper>
 			</section>
 		</div>
 	);
