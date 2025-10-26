@@ -137,7 +137,7 @@
 	max-width: 1500px;
 	margin: 0 auto;
 	padding: 2rem;
-	height: 90vh;
+	min-height: 100vh;
 }
 
 #featured-articles h2 {
@@ -147,7 +147,6 @@
 	color: #333;
 }
 .featured-articles-carousel {
-	/* max-width: 100%; */
 	margin: 0 auto;
 	padding: 1rem 0 3rem 0;
 }
@@ -192,8 +191,6 @@
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
-/* Mobile phones - 480px and below */
-/* Mobile - up to 480px */
 @media (max-width: 480px) {
 	.hero-section {
 		padding: 60px 12px;

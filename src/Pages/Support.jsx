@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import { FaPhone } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaEnvelope } from "react-icons/fa";
@@ -90,15 +92,16 @@ export default function Support() {
 
 						{/* Map */}
 						<div className="map-container">
-							<div className="map-placeholder">
-								<div className="map-content">
-									<FiMapPin className="map-icon" />
-									<p className="map-title">Our Location</p>
-									<p className="map-subtitle">
-										Interactive map would go here
-									</p>
-								</div>
-							</div>
+							<iframe
+								title="Google Map"
+								src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3584.09!2d28.03153019053157!3d-26.190143666179704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1729782334000!5m2!1sen!2sza"
+								width="100%"
+								height="250"
+								style={{ border: 0, borderRadius: "10px" }}
+								allowFullScreen=""
+								loading="lazy"
+								referrerPolicy="no-referrer-when-downgrade"
+							></iframe>
 						</div>
 					</div>
 
@@ -161,7 +164,10 @@ export default function Support() {
 								></textarea>
 							</div>
 
-							<button onClick={handleSubmit} className="submit-button">
+							<button
+								onClick={handleSubmit}
+								className="submit-button"
+							>
 								<span>Send Now</span>
 							</button>
 						</div>
