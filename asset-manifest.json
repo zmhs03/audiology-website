@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/audiology-website/static/css/main.00740322.css",
-    "main.js": "/audiology-website/static/js/main.746db5f2.js",
+    "main.css": "/audiology-website/static/css/main.c2a97a2b.css",
+    "main.js": "/audiology-website/static/js/main.4bb5b967.js",
     "static/media/hearing-aids.jpg": "/audiology-website/static/media/hearing-aids.aa35ad3bb7a1f0921ad8.jpg",
     "static/media/resources.jpg": "/audiology-website/static/media/resources.e3cac34ca0606c902a67.jpg",
     "static/media/construction.jpg": "/audiology-website/static/media/construction.98cc50919a133ff5a4b2.jpg",
@@ -9,14 +9,19 @@
     "static/media/gallery.jpg": "/audiology-website/static/media/gallery.18bf08a39744472ebbe9.jpg",
     "static/media/community.jpg": "/audiology-website/static/media/community.857e93e893c8f7906938.jpg",
     "static/media/check-ear.jpg": "/audiology-website/static/media/check-ear.384a92e3d8660be541c3.jpg",
+    "static/media/Ear3.jpg": "/audiology-website/static/media/Ear3.08977c9abe01f545f328.jpg",
     "static/media/test.jpg": "/audiology-website/static/media/test.c7303be84bfccf3d90cc.jpg",
+    "static/media/Prevention.jpg": "/audiology-website/static/media/Prevention.f66de1174152c36a487f.jpg",
     "static/media/earplug.jpg": "/audiology-website/static/media/earplug.47055c85b857649a467d.jpg",
+    "static/media/blank-whd-image.webp": "/audiology-website/static/media/blank-whd-image.8b1864bd55f886709414.webp",
+    "static/media/WHD-Banner-RGB.png": "/audiology-website/static/media/WHD-Banner-RGB.9e250ccdd21294cf936e.png",
+    "static/media/Hi-Hopes.jpg": "/audiology-website/static/media/Hi-Hopes.5ab1ccef877bf8b69e8a.jpg",
     "index.html": "/audiology-website/index.html",
-    "main.00740322.css.map": "/audiology-website/static/css/main.00740322.css.map",
-    "main.746db5f2.js.map": "/audiology-website/static/js/main.746db5f2.js.map"
+    "main.c2a97a2b.css.map": "/audiology-website/static/css/main.c2a97a2b.css.map",
+    "main.4bb5b967.js.map": "/audiology-website/static/js/main.4bb5b967.js.map"
   },
   "entrypoints": [
-    "static/css/main.00740322.css",
-    "static/js/main.746db5f2.js"
+    "static/css/main.c2a97a2b.css",
+    "static/js/main.4bb5b967.js"
   ]
 }
