@@ -10,9 +10,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 import "../Styles/home.css";
 import placeholder from "../Assets/images/placeholder.jpg";
+import WHD from "../Assets/images/WHD-Banner-RGB.png";
+import blank from "../Assets/images/blank-whd-image.webp";
 import hero from "../Assets/images/hero.jpg";
 import ArticleCard from "../Components/ArticleCard";
 import { articlesData } from "../Data/articles";
@@ -41,7 +44,7 @@ function Home() {
 			</section>
 
 			{/* === FEATURED CONTENT SECTION === */}
-			<section className="featured-content-section">
+			<section id="featured-content-section">
 				<div className="featured-content-container">
 					<div className="featured-content-grid">
 						<div className="featured-text">
@@ -53,21 +56,28 @@ function Home() {
 								Hearing Day — from events to campaigns that raised
 								awareness about hearing health.
 							</p>
-							<button className="featured-button">Read More</button>
+							<a
+								href="https://www.who.int/campaigns/world-hearing-day/2025"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="featured-button"
+							>
+								Read More <IoMdArrowRoundForward />
+							</a>
 						</div>
 
 						<div className="featured-visual">
 							<div className="circles-container">
 								<div className="circle-large">
 									<img
-										src={placeholder}
+										src={WHD}
 										alt="Featured content"
 										className="circle-image"
 									/>
 								</div>
 								<div className="circle-small">
 									<img
-										src={placeholder}
+										src={blank}
 										alt="Featured content"
 										className="circle-image"
 									/>

@@ -8,7 +8,7 @@ import {
 	AlertCircle,
 	Radio,
 } from "lucide-react";
-import placeholder from "../Assets/images/placeholder.jpg";
+import EarPrevention from "../Assets/images/Prevention.jpg"; //Photo by Kindel Media: https://www.pexels.com/photo/close-up-photo-of-orange-earplugs-8488012/
 
 import "../Styles/prevention.css";
 
@@ -111,7 +111,7 @@ function Prevention() {
 					<div className="hero-prevention-right">
 						<div className="hero-prevention-image-box">
 							<img
-								src={placeholder}
+								src={EarPrevention}
 								alt="Hearing protection"
 								className="hero-prevention-image"
 							/>

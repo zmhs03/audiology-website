@@ -33,7 +33,6 @@
 /* Base Styles */
 .prevention-page {
 	min-height: 100vh;
-	background-color: #f9fafb;
 }
 
 /* Hero Section */
@@ -115,7 +114,6 @@
 	aspect-ratio: 1;
 	border-radius: 0.5rem;
 	overflow: hidden;
-	border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero-prevention-image {
@@ -201,7 +199,6 @@
 
 /* Quick Tips Section */
 .quick-tips-section {
-	background-color: #f9fafb;
 	padding: 4rem 1.5rem;
 }
 

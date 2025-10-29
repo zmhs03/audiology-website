@@ -1,19 +1,23 @@
-import { useState } from 'react';
+import { useState } from "react";
 import placeholder from "../Assets/images/placeholder.jpg";
 
-// Reusable SlideCard Component
-function SlideCard({ image = placeholder, title = "Title", description = "Description", link = "#" }) {
+function SlideCard({
+	image = placeholder,
+	title = "Title",
+	description = "Description",
+	link = "#",
+}) {
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleView = () => {
 		if (link && link !== "#") {
-			window.open(link, '_blank', 'noopener,noreferrer');
+			window.open(link, "_blank", "noopener,noreferrer");
 		}
 	};
 
 	return (
 		<div
-			className={`card-slide-card ${isHovered ? 'hovered' : ''}`}
+			className={`card-slide-card ${isHovered ? "hovered" : ""}`}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>

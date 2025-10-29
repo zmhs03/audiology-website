@@ -1,6 +1,10 @@
 import "../Styles/involved.css";
 import placeholder from "../Assets/images/placeholder.jpg";
+import Hi from "../Assets/images/Hi-Hopes.jpg";
+import Carel from "../Assets/images/carel-du-toit.jpg";
+import Ear3 from "../Assets/images/Ear3.jpg"; //Photo by Kindel Media: https://www.pexels.com/photo/man-s-ear-in-close-up-photography-7298465/
 import CardSlider from "../Components/CardSlider";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 function GetInvolved() {
 	const fundraisingCards = [
@@ -13,13 +17,13 @@ function GetInvolved() {
 			link: "https://www.globalgiving.org/donate/102379/foundation-for-children-with-hearing-loss-in-southern-a/",
 		},
 		{
-			image: placeholder,
-			title: "High Hopes",
-			description: "High Hopes",
+			image: Hi,
+			title: "Hi Hopes",
+			description: "Hi Hopes",
 			link: "https://devman.wits.ac.za/Devman/hihopes/giving/",
 		},
 		{
-			image: placeholder,
+			image: Carel,
 			title: "Carel du Toit Centre",
 			description:
 				"Join our team in spreading awareness about hearing health.",
@@ -43,15 +47,9 @@ function GetInvolved() {
 
 	const volunteeringCards = [
 		{
-			image: placeholder,
-			title: "Socigo",
-			description: "Support local initiatives",
-			link: "https://example.com/socigo",
-		},
-		{
-			image: placeholder,
-			title: "High Hopes",
-			description: "High Hopes",
+			image: Hi,
+			title: "Hi Hopes",
+			description: "Hi Hopes",
 			link: "https://devman.wits.ac.za/Devman/hihopes/giving/",
 		},
 		{
@@ -79,19 +77,27 @@ function GetInvolved() {
 				<div className="container">
 					<div className="header-content">
 						<div className="text-content">
-							<span className="date">MARCH 3, 2025</span>
-							<h2>World Hearing Day 2025</h2>
+							<span className="date">MARCH 3</span>
+							<h2>World Hearing Day </h2>
 							<p>
 								Increase awareness and promote action to address hearing
 								loss and related issues. Together we can make a difference
 								in the lives of those with hearing difficulties.
 							</p>
+							<a
+								href="https://www.who.int/campaigns/world-hearing-day"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="learn-more-button"
+							>
+								Learn More <IoMdArrowRoundForward />
+							</a>
 						</div>
 						<div className="header-image">
 							<div className="image-placeholder">
 								<img
-									src={placeholder}
-									alt="Placeholder"
+									src={Ear3}
+									alt="Left ear"
 									className="placeholder-image"
 								/>
 							</div>
