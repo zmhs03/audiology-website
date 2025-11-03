@@ -11,9 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { IoMdArrowRoundForward } from "react-icons/io";
-
 import "../Styles/home.css";
-import placeholder from "../Assets/images/placeholder.jpg";
 import WHD from "../Assets/images/WHD-Banner-RGB.png";
 import blank from "../Assets/images/blank-whd-image.webp";
 import hero from "../Assets/images/hero.jpg";
@@ -24,7 +22,6 @@ function Home() {
 	const [featured, setFeatured] = useState([]);
 
 	useEffect(() => {
-		// Shuffle and select 3 random featured articles
 		const shuffled = [...articlesData].sort(() => 0.5 - Math.random());
 		setFeatured(shuffled.slice(0, 5));
 	}, []);

@@ -82,7 +82,7 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href="/audiology-website/Fundraising"
+									href="/audiology-website/Get-Involved/#fundraising"
 									className="footer-link"
 								>
 									Fundraising
@@ -90,7 +90,7 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href="/audiology-website/Volunteer"
+									href="/audiology-website/Get-Involved/#volunteer"
 									className="footer-link"
 								>
 									Volunteer
@@ -98,14 +98,17 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href="/audiology-website/Advocacy"
+									href="/audiology-website/Get-Involved/#campaigns"
 									className="footer-link"
 								>
-									Advocacy
+									Campaigns
 								</a>
 							</li>
 							<li>
-								<a href="/audiology-website" className="footer-link">
+								<a
+									href="/audiology-website"
+									className="footer-link"
+								>
 									Donate
 								</a>
 							</li>
@@ -125,7 +128,10 @@ function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href="/audiology-website/FAQs" className="footer-link">
+								<a
+									href="/audiology-website/FAQs"
+									className="footer-link"
+								>
 									FAQs
 								</a>
 							</li>
@@ -143,20 +149,40 @@ function Footer() {
 
 				{/* Social Media Icons */}
 				<div className="social-media">
-					<a href="#" className="social-link">
+					<a
+						href="https://www.instagram.com/wits__university/?hl=en"
+						className="social-link"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<span className="sr-only">Instagram</span>
 						<FaInstagram size={20} />
 					</a>
-					<a href="#" className="social-link">
+					<a
+						href="https://www.facebook.com/WitsUniversity"
+						className="social-link"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<span className="sr-only">Facebook</span>
 						<FaFacebookF size={20} />
 					</a>
-					<a href="#" className="social-link">
+					<a
+						href="https://www.tiktok.com/@witsuniversity"
+						className="social-link"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<span className="sr-only">TikTok</span>
 						<FaTiktok size={20} />
 					</a>
-					<a href="#" className="social-link">
-						<span className="sr-only">Twitter</span>
+					<a
+						href="https://x.com/WitsUniversity"
+						className="social-link"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span className="sr-only">X</span>
 						<FaXTwitter size={20} />
 					</a>
 				</div>

@@ -1,4 +1,3 @@
-import { articlesData } from "../Data/articles";
 import "../Styles/articles.css";
 
 const ArticleCard = ({ article }) => {
@@ -8,12 +7,11 @@ const ArticleCard = ({ article }) => {
 	}
 
 	const handleCardClick = () => {
-		window.open(article.url, "_blank", "noopener, noreferrer0"); //Article will open in a new tab
+		window.open(article.url, "_blank", "noopener, noreferrer0");
 	};
 
 	const handleKeyPress = (event) => {
 		if (event.key === "Enter" || event.key === "") {
-			//Handles keyboard navigation for accesssibilty
 			event.preventDefault();
 			handleCardClick();
 		}
@@ -36,7 +34,7 @@ const ArticleCard = ({ article }) => {
 			onKeyDown={handleKeyPress}
 			tabIndex={0}
 			role="button"
-			aria-label={"Read article:${article.title"}
+			aria-label={`Read article: ${article.title}`}
 		>
 			<div className="article-header">
 				<div className="article-badges">

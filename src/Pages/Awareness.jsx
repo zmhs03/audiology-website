@@ -11,14 +11,13 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router";
-import { FaChevronLeft } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ArticleCard from "../Components/ArticleCard";
 import { articlesData } from "../Data/articles";
-import gallery from "../Assets/images/gallery.jpg"; //<a href="https://www.freepik.com/free-photo/woman-wearing-headphones-side-view_34215954.htm">Image by freepik</a>
-import resources from "../Assets/images/resources.jpg"; //<a href="https://www.freepik.com/free-photo/young-student-working-assignment_22377289.htm">Image by freepik</a>
-import hearing_aid from "../Assets/images/hearing-aids.jpg"; //<a href="https://www.freepik.com/free-photo/hearing-aids-case-high-angle_32077715.htm">Image by freepik</a>
-import check_ear from "../Assets/images/check-ear.jpg"; //<a href="https://www.freepik.com/free-photo/clinic-otology-specialist-consulting-senior-patient-using-otoscope-check-ear-infection-hospital-otologist-examining-sick-retired-man-internal-ear-condition-while-doctor-cabinet_28175280.htm">Image by DC Studio on Freepik</a>
+import gallery from "../Assets/images/gallery.jpg";
+import resources from "../Assets/images/resources.jpg";
+import hearing_aid from "../Assets/images/hearing-aids.jpg";
+import check_ear from "../Assets/images/check-ear.jpg";
 import auidology_test from "../Assets/images/test.jpg";
 import construction from "../Assets/images/construction.jpg";
 import community from "../Assets/images/community.jpg";
@@ -30,14 +29,14 @@ function Awareness() {
 	const navigate = useNavigate();
 	const [featured, setFeatured] = useState([]);
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const [isHovering, setIsHovering] = useState(false);
 
-	// Touch/Swipe functionality refs
+	// Touch/Swipe refs
 	const touchStartX = useRef(null);
 	const touchEndX = useRef(null);
 	const isDragging = useRef(false);
 	const sliderRef = useRef(null);
 
-	// Minimum swipe distance to trigger slide change
 	const MIN_SWIPE_DISTANCE = 50;
 
 	useEffect(() => {
@@ -45,7 +44,6 @@ function Awareness() {
 		setFeatured(shuffled.slice(0, 6));
 	}, []);
 
-	// Gallery slides data with descriptions
 	const slides = [
 		{
 			id: 1,
@@ -85,7 +83,27 @@ function Awareness() {
 		},
 	];
 
-	// Touch event handlers for mobile swipe
+	// Stable slide functions
+	const nextSlide = useCallback(() => {
+		setCurrentSlide((prev) => (prev + 1) % slides.length);
+	}, [slides.length]);
+
+	const prevSlide = useCallback(() => {
+		setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+	}, [slides.length]);
+
+	// Auto-slide interval with pause on hover or drag
+	useEffect(() => {
+		const slideInterval = setInterval(() => {
+			if (!isDragging.current && !isHovering) {
+				nextSlide();
+			}
+		}, 4000);
+
+		return () => clearInterval(slideInterval);
+	}, [nextSlide, isHovering]);
+
+	// Touch handlers
 	const handleTouchStart = useCallback((e) => {
 		touchStartX.current = e.targetTouches[0].clientX;
 		isDragging.current = false;
@@ -97,41 +115,40 @@ function Awareness() {
 		const currentTouch = e.targetTouches[0].clientX;
 		const diff = touchStartX.current - currentTouch;
 
-		// If user has moved more than 10px, consider it a drag
 		if (Math.abs(diff) > 10) {
 			isDragging.current = true;
 		}
 	}, []);
 
-	const handleTouchEnd = useCallback((e) => {
-		if (!touchStartX.current || !isDragging.current) return;
+	const handleTouchEnd = useCallback(
+		(e) => {
+			if (!touchStartX.current || !isDragging.current) return;
 
-		touchEndX.current = e.changedTouches[0].clientX;
-		const swipeDistance = touchStartX.current - touchEndX.current;
-		const isLeftSwipe = swipeDistance > MIN_SWIPE_DISTANCE;
-		const isRightSwipe = swipeDistance < -MIN_SWIPE_DISTANCE;
+			touchEndX.current = e.changedTouches[0].clientX;
+			const swipeDistance = touchStartX.current - touchEndX.current;
+			const isLeftSwipe = swipeDistance > MIN_SWIPE_DISTANCE;
+			const isRightSwipe = swipeDistance < -MIN_SWIPE_DISTANCE;
 
-		if (isLeftSwipe) {
-			nextSlide();
-		} else if (isRightSwipe) {
-			prevSlide();
-		}
+			if (isLeftSwipe) {
+				nextSlide();
+			} else if (isRightSwipe) {
+				prevSlide();
+			}
 
-		// Reset touch values
-		touchStartX.current = null;
-		touchEndX.current = null;
-		isDragging.current = false;
-	}, []);
+			touchStartX.current = null;
+			touchEndX.current = null;
+			isDragging.current = false;
+		},
+		[nextSlide, prevSlide]
+	);
 
 	const handleSlideClick = (slide, event) => {
-		// Prevent navigation if dragging/swiping
 		if (isDragging.current) {
 			event.preventDefault();
 			event.stopPropagation();
 			return;
 		}
 
-		// Prevent navigation if clicking on navigation arrows, indicators, or hero content
 		if (
 			event.target.closest(".slider-nav") ||
 			event.target.closest(".slider-indicators") ||
@@ -140,27 +157,20 @@ function Awareness() {
 			return;
 		}
 
-		// Navigate to internal route
 		navigate(slide.url);
-	};
-
-	const nextSlide = () => {
-		setCurrentSlide((prev) => (prev + 1) % slides.length);
-	};
-
-	const prevSlide = () => {
-		setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 	};
 
 	return (
 		<div className="awareness">
-			{/* Hero Gallery Slider */}
+			{/* Hero Slider */}
 			<section
 				id="hero-slider"
 				ref={sliderRef}
 				onTouchStart={handleTouchStart}
 				onTouchMove={handleTouchMove}
 				onTouchEnd={handleTouchEnd}
+				onMouseEnter={() => setIsHovering(true)}
+				onMouseLeave={() => setIsHovering(false)}
 			>
 				<div
 					className="slider-container"
@@ -170,7 +180,7 @@ function Awareness() {
 						<div
 							key={slide.id}
 							className="slide clickable-slide"
-							onClick={(event) => handleSlideClick(slide, event)}
+							onClick={(e) => handleSlideClick(slide, e)}
 							title={`Click to visit: ${slide.title}`}
 						>
 							<div className="slide-content">
@@ -179,7 +189,6 @@ function Awareness() {
 									alt={slide.alt}
 									className="slide-image"
 								/>
-								{/* Hero-style text overlay */}
 								<div className="hero-text-overlay">
 									<div className="hero-text-content">
 										<h2 className="awareness-hero-title">{slide.title}</h2>
@@ -238,7 +247,7 @@ function Awareness() {
 				</div>
 			</section>
 
-			{/* Popular Articles Section */}
+			{/* Popular Articles */}
 			<section id="popular-articles">
 				<h2 className="section-heading">Popular Articles</h2>
 				<Swiper
@@ -246,10 +255,7 @@ function Awareness() {
 					spaceBetween={30}
 					slidesPerView={1}
 					loop={true}
-					autoplay={{
-						delay: 4000,
-						disableOnInteraction: false,
-					}}
+					autoplay={{ delay: 4000, disableOnInteraction: false }}
 					pagination={{ clickable: true }}
 					navigation
 					breakpoints={{
@@ -268,7 +274,7 @@ function Awareness() {
 				</Swiper>
 			</section>
 
-			{/* Main Content Section */}
+			{/* Main Content */}
 			<section id="main-content">
 				<div className="container">
 					<div className="content-header">
@@ -281,16 +287,13 @@ function Awareness() {
 						</p>
 					</div>
 
-					{/* Two Column Layout */}
 					<div className="content-grid">
-						{/* Left Column */}
 						<div className="content-column">
 							<h4 className="subsection-title">Loud Noise Risks</h4>
 							<p className="column-text">
 								Repeated exposure to loud environments can cause
 								irreversible hearing damage.
 							</p>
-
 							<img
 								src={construction}
 								alt="Carpenter wearing protective headphones while working"
@@ -303,7 +306,6 @@ function Awareness() {
 								concerts, and taking listening breaks protect hearing over
 								a lifetime.
 							</p>
-
 							<img
 								src={earplug}
 								alt="Construction worker putting on ear plugs"
@@ -311,7 +313,6 @@ function Awareness() {
 							/>
 						</div>
 
-						{/* Right Column */}
 						<div className="content-column">
 							<h4 className="subsection-title">Early Detection</h4>
 							<p className="column-text">
@@ -319,7 +320,6 @@ function Awareness() {
 								outcomes. Simple screening can reveal issues long before
 								they affect daily life.
 							</p>
-
 							<img
 								src={auidology_test}
 								alt="Audiology test"
@@ -330,7 +330,6 @@ function Awareness() {
 							<p className="column-text">
 								Real experiences show why support and stigma-free
 								conversation matter. Hearing aids and community services
-								(i.e. counselling, audiology clinics, and peer groups)
 								improve quality of life for many.
 							</p>
 							<img
