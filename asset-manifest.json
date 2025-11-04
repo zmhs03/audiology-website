@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/audiology-website/static/css/main.0559ede1.css",
-    "main.js": "/audiology-website/static/js/main.f5f539e8.js",
+    "main.css": "/audiology-website/static/css/main.b452e42d.css",
+    "main.js": "/audiology-website/static/js/main.dab7ddc7.js",
     "static/media/hearing-aids.jpg": "/audiology-website/static/media/hearing-aids.aa35ad3bb7a1f0921ad8.jpg",
     "static/media/resources.jpg": "/audiology-website/static/media/resources.e3cac34ca0606c902a67.jpg",
     "static/media/construction.jpg": "/audiology-website/static/media/construction.98cc50919a133ff5a4b2.jpg",
@@ -15,14 +15,16 @@
     "static/media/earplug.jpg": "/audiology-website/static/media/earplug.47055c85b857649a467d.jpg",
     "static/media/blank-whd-image.webp": "/audiology-website/static/media/blank-whd-image.8b1864bd55f886709414.webp",
     "static/media/WHD-Banner-RGB.png": "/audiology-website/static/media/WHD-Banner-RGB.9e250ccdd21294cf936e.png",
+    "static/media/Logo1.png": "/audiology-website/static/media/Logo1.17c20a24248d8c917be0.png",
     "static/media/Hi-Hopes.jpg": "/audiology-website/static/media/Hi-Hopes.5ab1ccef877bf8b69e8a.jpg",
+    "static/media/WordLogo.png": "/audiology-website/static/media/WordLogo.fa712659b484871a1c3f.png",
     "static/media/WordLogo-white.png": "/audiology-website/static/media/WordLogo-white.fa917b216320c82be63a.png",
     "index.html": "/audiology-website/index.html",
-    "main.0559ede1.css.map": "/audiology-website/static/css/main.0559ede1.css.map",
-    "main.f5f539e8.js.map": "/audiology-website/static/js/main.f5f539e8.js.map"
+    "main.b452e42d.css.map": "/audiology-website/static/css/main.b452e42d.css.map",
+    "main.dab7ddc7.js.map": "/audiology-website/static/js/main.dab7ddc7.js.map"
   },
   "entrypoints": [
-    "static/css/main.0559ede1.css",
-    "static/js/main.f5f539e8.js"
+    "static/css/main.b452e42d.css",
+    "static/js/main.dab7ddc7.js"
   ]
 }
