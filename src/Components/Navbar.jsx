@@ -1,47 +1,50 @@
 import { Link } from "react-router";
 import { useState } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
+import Logo from "../Assets/images/Logo1.png";
+import Logow from "../Assets/images/WordLogo.png";
 
 import "../Styles/navbar.css";
+
+const dropdownItems = {
+	Awareness: [
+		{ to: "/Awareness", label: "Overview" },
+		{ to: "/Gallery", label: "Gallery" },
+		{ to: "/Prevention", label: "Prevention" },
+		{ to: "/Resources", label: "Resources" },
+	],
+};
 
 function Navbar() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-	const toggleDropdown = (dropdownName) => {
-		setActiveDropdown(
-			activeDropdown === dropdownName ? null : dropdownName
-		);
+	const toggleDropdown = (key) => {
+		setActiveDropdown(activeDropdown === key ? null : key);
 	};
 
-	const closeDropdown = () => {
-		setActiveDropdown(null);
-	};
+	const closeDropdown = () => setActiveDropdown(null);
 
 	const closeDrawer = () => {
 		setIsDrawerOpen(false);
-		setActiveDropdown(null);
-	};
-
-	const dropdownItems = {
-		Awareness: [
-			{ to: "/Awareness", label: "Overview" },
-			{ to: "/Gallery", label: "Gallery" },
-			{ to: "/Prevention", label: "Prevention" },
-			{ to: "/Resources", label: "Resources" },
-		],
+		closeDropdown();
 	};
 
 	return (
 		<nav className="navbar">
+			{/* Logo */}
 			<Link
 				to="/"
-				className="navbar-logo"
+				className="logo-link"
 			>
-				Hear & Now
+				<img
+					src={Logo}
+					alt="Hear & Now"
+					className="logo-image"
+				/>
 			</Link>
 
-			{/* Hamburger */}
+			{/* Hamburger button */}
 			<button
 				className="mobile-menu-icon"
 				onClick={() => setIsDrawerOpen(!isDrawerOpen)}
@@ -51,15 +54,6 @@ function Navbar() {
 
 			{/* Desktop menu */}
 			<ul className="nav-menu">
-				<li className="nav-item">
-					<Link
-						to="/"
-						className="nav-links"
-					>
-						Home
-					</Link>
-				</li>
-
 				<li className="nav-item">
 					<Link
 						to="/AboutUs"
@@ -90,6 +84,7 @@ function Navbar() {
 								<FaChevronDown />
 							</button>
 						</div>
+
 						{activeDropdown === key && (
 							<ul className="dropdown-menu">
 								{items.map((item, i) => (
@@ -115,7 +110,6 @@ function Navbar() {
 						Get Involved
 					</Link>
 				</li>
-
 				<li className="nav-item">
 					<Link
 						to="/Support"
@@ -125,7 +119,6 @@ function Navbar() {
 					</Link>
 				</li>
 			</ul>
-
 			<button className="donate-btn">Donate</button>
 
 			{/* Mobile drawer + overlay */}
