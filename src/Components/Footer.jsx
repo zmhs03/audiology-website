@@ -1,7 +1,8 @@
 import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { FiSearch } from "react-icons/fi";
 import "../Styles/footer.css";
+import WordLogo1 from "../Assets/images/WordLogo-white.png";
+import ScrollLink from "../Components/ScrollLink";
 
 function Footer() {
 	return (
@@ -10,23 +11,16 @@ function Footer() {
 				<div className="footer-grid">
 					{/* Hear & Now */}
 					<div className="footer-column">
-						<h3 className="footer-heading">Hear & Now</h3>
-						<p className="footer-description">
-							A digital platform dedicated to raising hearing health
-							awareness
-						</p>
-						<div className="search-container">
-							<div className="search-wrapper">
-								<input
-									type="text"
-									placeholder="Search..."
-									className="search-input"
-								/>
-								<div className="search-icon">
-									<FiSearch size={16} />
-								</div>
-							</div>
-						</div>
+						<ScrollLink
+							to="/"
+							className="footer-logo-link"
+						>
+							<img
+								src={WordLogo1}
+								alt="Hear & Now"
+								className="footer-footer-heading footer-heading-img"
+							/>
+						</ScrollLink>
 					</div>
 
 					{/* Awareness */}
@@ -34,36 +28,36 @@ function Footer() {
 						<h3 className="footer-heading">Awareness</h3>
 						<ul className="footer-links">
 							<li>
-								<a
-									href="/audiology-website/Awareness"
+								<ScrollLink
+									to="/Awareness"
 									className="footer-link"
 								>
 									Overview
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Gallery"
+								<ScrollLink
+									to="/Gallery"
 									className="footer-link"
 								>
 									Gallery
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Prevention"
+								<ScrollLink
+									to="/Prevention"
 									className="footer-link"
 								>
 									Prevention
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Resources"
+								<ScrollLink
+									to="/Resources"
 									className="footer-link"
 								>
 									Resources
-								</a>
+								</ScrollLink>
 							</li>
 						</ul>
 					</div>
@@ -73,44 +67,47 @@ function Footer() {
 						<h3 className="footer-heading">Get Involved</h3>
 						<ul className="footer-links">
 							<li>
-								<a
-									href="/audiology-website/Get-Involved"
+								<ScrollLink
+									to="/Get-Involved"
 									className="footer-link"
 								>
 									Get Involved
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Get-Involved/#fundraising"
+								<ScrollLink
+									to="/Get-Involved"
+									state={{ scrollTo: "fundraising" }}
 									className="footer-link"
 								>
 									Fundraising
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Get-Involved/#volunteer"
+								<ScrollLink
+									to="/Get-Involved"
+									state={{ scrollTo: "volunteer" }}
 									className="footer-link"
 								>
 									Volunteer
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Get-Involved/#campaigns"
+								<ScrollLink
+									to="/Get-Involved"
+									state={{ scrollTo: "campaigns" }}
 									className="footer-link"
 								>
 									Campaigns
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website"
+								<ScrollLink
+									to="/audiology-website"
 									className="footer-link"
 								>
 									Donate
-								</a>
+								</ScrollLink>
 							</li>
 						</ul>
 					</div>
@@ -120,28 +117,28 @@ function Footer() {
 						<h3 className="footer-heading">Support</h3>
 						<ul className="footer-links">
 							<li>
-								<a
-									href="/audiology-website/Audiologist"
+								<ScrollLink
+									to="/audiology-website/Audiologist"
 									className="footer-link"
 								>
 									Find an Audiologist
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/FAQs"
+								<ScrollLink
+									to="/audiology-website/FAQs"
 									className="footer-link"
 								>
 									FAQs
-								</a>
+								</ScrollLink>
 							</li>
 							<li>
-								<a
-									href="/audiology-website/Support"
+								<ScrollLink
+									to="/audiology-website/Support"
 									className="footer-link"
 								>
 									Contact Us
-								</a>
+								</ScrollLink>
 							</li>
 						</ul>
 					</div>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../Styles/involved.css";
 
 import Hi from "../Assets/images/Hi-Hopes.jpg";
@@ -79,6 +80,24 @@ const CAMPAIGNS_CARDS = [
 ];
 
 function GetInvolved() {
+	const location = useLocation();
+
+	useEffect(() => {
+		// Handle scrolling to section if state is provided
+		if (location.state?.scrollTo) {
+			// Small timeout to ensure page is fully rendered
+			setTimeout(() => {
+				const element = document.getElementById(location.state.scrollTo);
+				if (element) {
+					element.scrollIntoView({
+						behavior: "smooth",
+						block: "start",
+					});
+				}
+			}, 100);
+		}
+	}, [location]);
+
 	return (
 		<div className="get-involved">
 			{/* Header Section */}

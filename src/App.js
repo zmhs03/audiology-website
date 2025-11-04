@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import ReactGA from "react-ga4";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import Awareness from "./Pages/Awareness";
@@ -16,9 +18,25 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import "./App.css";
 
+ReactGA.initialize("G-E8JKYCETW2");
+
+function AnalyticsTracker() {
+	const location = useLocation();
+
+	useEffect(() => {
+		ReactGA.send({
+			hitType: "pageview",
+			page: location.pathname + location.search,
+		});
+	}, [location]);
+
+	return null;
+}
+
 function App() {
 	return (
 		<BrowserRouter basename="/audiology-website">
+			<AnalyticsTracker />
 			<Navbar />
 			<Routes>
 				<Route
