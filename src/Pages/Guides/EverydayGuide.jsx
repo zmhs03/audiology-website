@@ -90,8 +90,7 @@ const EverydayGuide = ({
 							className="placeholder-img"
 						/>
 						<figcaption>
-							Noise exposure is a part of daily life — protect your
-							hearing.
+							Noise exposure is a part of daily life. Protect your hearing.
 						</figcaption>
 					</figure>
 				</div>
