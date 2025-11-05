@@ -50,8 +50,8 @@ function Home() {
 							</h2>
 							<p className="featured-description">
 								Find out everything that happened on this year's World
-								Hearing Day — from events to campaigns that raised
-								awareness about hearing health.
+								Hearing Day, from events to campaigns that raised awareness
+								about hearing health.
 							</p>
 							<a
 								href="https://www.who.int/campaigns/world-hearing-day/2025"
@@ -98,6 +98,8 @@ function Home() {
 						delay: 4000,
 						disableOnInteraction: false,
 					}}
+					observer={true}
+					observeParents={true}
 					pagination={{ clickable: true }}
 					navigation
 					breakpoints={{

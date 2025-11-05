@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import placeholder from "../Assets/images/placeholder.jpg";
 
 function SlideCard({
@@ -8,6 +8,18 @@ function SlideCard({
 	link = "#",
 }) {
 	const [isHovered, setIsHovered] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 768);
+		};
+
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
 
 	const handleView = () => {
 		if (link && link !== "#") {
@@ -15,11 +27,19 @@ function SlideCard({
 		}
 	};
 
+	const handleCardClick = () => {
+		if (isMobile) {
+			handleView();
+		}
+	};
+
 	return (
 		<div
 			className={`card-slide-card ${isHovered ? "hovered" : ""}`}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
+			onMouseEnter={() => !isMobile && setIsHovered(true)}
+			onMouseLeave={() => !isMobile && setIsHovered(false)}
+			onClick={handleCardClick}
+			style={{ cursor: isMobile ? "pointer" : "default" }}
 		>
 			<div className="slide-card-inner">
 				{/* Image Section */}
@@ -37,12 +57,14 @@ function SlideCard({
 						<h4>{title}</h4>
 						<p>{description}</p>
 					</div>
-					<button
-						className="view-button"
-						onClick={handleView}
-					>
-						View
-					</button>
+					{!isMobile && (
+						<button
+							className="view-button"
+							onClick={handleView}
+						>
+							View
+						</button>
+					)}
 				</div>
 			</div>
 		</div>

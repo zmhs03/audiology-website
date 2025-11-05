@@ -18,7 +18,7 @@ import CardSlider from "../Components/CardSlider";
 const FUNDRAISING_CARDS = [
 	{
 		image: Hear,
-		title: "Foundation for Children with Hearing Loss in Southern Africa",
+		title: "hearingloss.org.za",
 		description:
 			"Supporting children with hearing loss across Southern Africa through education, advocacy, and resources.",
 		link: "https://www.globalgiving.org/donate/102379/foundation-for-children-with-hearing-loss-in-southern-a/",
@@ -101,38 +101,37 @@ function GetInvolved() {
 	return (
 		<div className="get-involved">
 			{/* Header Section */}
-			<section className="header-section">
-				<div className="container">
-					<div className="header-content">
-						<div className="text-content">
-							<span className="date">MARCH 3</span>
-							<h2>World Hearing Day</h2>
-							<p>
-								Increase awareness and promote action to address hearing
-								loss and related issues. Together we can make a difference
-								in the lives of those with hearing difficulties.
-							</p>
-							<a
-								href="https://www.who.int/campaigns/world-hearing-day"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="learn-more-button"
-							>
-								Learn More <IoMdArrowRoundForward />
-							</a>
-						</div>
-						<div className="header-image">
-							<div className="image-placeholder">
-								<img
-									src={Ear3}
-									alt="Left ear"
-									className="placeholder-image"
-								/>
-							</div>
+			<div className="hero-hearingday-section">
+				<div className="hero-hearingday-container">
+					<div className="hero-hearingday-left">
+						<p className="hero-hearingday-label">March 3</p>
+						<h1 className="hero-hearingday-title">World Hearing Day</h1>
+						<p className="hero-hearingday-text">
+							Increase awareness and promote action to address hearing loss
+							and related issues. Together we can make a difference in the
+							lives of those with hearing difficulties.
+						</p>
+						<a
+							href="https://www.who.int/campaigns/world-hearing-day"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="learn-more-button"
+						>
+							Learn More <IoMdArrowRoundForward />
+						</a>
+					</div>
+
+					<div className="hero-hearingday-right">
+						<div className="hero-hearingday-image-box">
+							<img
+								src={Ear3}
+								alt="World Hearing Day illustration"
+								className="hero-hearingday-image"
+							/>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 
 			{/* Join Section */}
 			<section

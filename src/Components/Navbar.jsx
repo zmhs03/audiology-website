@@ -56,6 +56,14 @@ function Navbar() {
 			<ul className="nav-menu">
 				<li className="nav-item">
 					<Link
+						to="/"
+						className="nav-links"
+					>
+						Home
+					</Link>
+				</li>
+				<li className="nav-item">
+					<Link
 						to="/AboutUs"
 						className="nav-links"
 					>

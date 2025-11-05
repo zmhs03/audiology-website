@@ -1,6 +1,10 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import {
+	Navigation,
+	Pagination,
+	Autoplay,
+	EffectFade,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,14 +14,13 @@ import SlideCard from "../Components/SlideCard";
 function CardSlider({ cards }) {
 	return (
 		<Swiper
-			modules={[Navigation, Pagination, Autoplay]}
-			slidesPerView="auto" // card width controls slide size
+			modules={[Navigation, Pagination, Autoplay, EffectFade]}
+			slidesPerView={1}
 			spaceBetween={30}
-			centeredSlides={true} // for peek effect
-			loop
+			loop={true}
 			navigation
 			pagination={{ clickable: true }}
-			autoplay={{ delay: 5000 }}
+			autoplay={{ delay: 4000, disableOnInteraction: false }}
 			observer={true}
 			observeParents={true}
 			breakpoints={{

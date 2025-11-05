@@ -110,6 +110,7 @@
 	display: flex;
 	gap: 16px;
 	padding-top: 24px;
+	justify-content: center;
 }
 
 .social-link {

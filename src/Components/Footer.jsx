@@ -101,14 +101,6 @@ function Footer() {
 									Campaigns
 								</ScrollLink>
 							</li>
-							<li>
-								<ScrollLink
-									to="/audiology-website"
-									className="footer-link"
-								>
-									Donate
-								</ScrollLink>
-							</li>
 						</ul>
 					</div>
 
@@ -116,22 +108,6 @@ function Footer() {
 					<div className="footer-column">
 						<h3 className="footer-heading">Support</h3>
 						<ul className="footer-links">
-							<li>
-								<ScrollLink
-									to="/audiology-website/Audiologist"
-									className="footer-link"
-								>
-									Find an Audiologist
-								</ScrollLink>
-							</li>
-							<li>
-								<ScrollLink
-									to="/audiology-website/FAQs"
-									className="footer-link"
-								>
-									FAQs
-								</ScrollLink>
-							</li>
 							<li>
 								<ScrollLink
 									to="/audiology-website/Support"

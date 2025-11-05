@@ -1,7 +1,7 @@
-/* Base container */
+/* Base Container */
 .home-container {
 	min-height: 100vh;
-	background-color: #f9fafb;
+	/* background-color: #f9fafb; */
 }
 
 /* Hero Section */
@@ -83,20 +83,15 @@
 }
 
 .featured-button {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
 	text-decoration: none;
-	padding: 10 px 20 px;
 	font-size: 16px;
 	font-weight: 500;
 	cursor: pointer;
 	margin-top: 24px;
-	transition: all 0.3 ease;
+	transition: all 0.3s ease;
 	color: #00c5cd;
-}
-
-.featured-button:hover {
-	color: #2c387f;
-	transition: all 0.2s ease-out;
 }
 
 .featured-visual {
@@ -136,6 +131,8 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+/* Featured Articles */
 #featured-articles {
 	max-width: 1500px;
 	margin: 0 auto;
@@ -149,11 +146,13 @@
 	font-size: 2rem;
 	color: #333;
 }
+
 .featured-articles-carousel {
 	margin: 0 auto;
 	padding: 1rem 0 3rem 0;
 }
 
+/* Swiper Navigation & Pagination */
 .swiper-button-next,
 .swiper-button-prev {
 	color: #2c387f;
@@ -174,6 +173,7 @@
 	background-color: #00c5cd !important;
 }
 
+/* Animations */
 .fade-in {
 	opacity: 0;
 	transform: translateY(20px);
@@ -192,8 +192,9 @@
 	transition: transform 0.4s ease;
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* Responsive Design */
 
+/* Mobile - up to 480px */
 @media (max-width: 480px) {
 	.hero-section {
 		padding: 60px 12px;
@@ -235,7 +236,6 @@
 	}
 
 	.featured-button {
-		padding: 10px 20px;
 		font-size: 0.9rem;
 		width: 100%;
 	}
@@ -254,9 +254,14 @@
 		width: 140px;
 		height: 140px;
 	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none;
+	}
 }
 
-/* Small tablets - 481px to 768px */
+/* Small Tablets - 481px to 768px */
 @media (min-width: 481px) and (max-width: 768px) {
 	.hero-section {
 		padding: 70px 16px;
@@ -311,6 +316,11 @@
 	.circle-small {
 		width: 160px;
 		height: 160px;
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none;
 	}
 }
 
@@ -407,7 +417,6 @@
 	}
 
 	.featured-button {
-		padding: 12px 24px;
 		font-size: 1rem;
 	}
 
