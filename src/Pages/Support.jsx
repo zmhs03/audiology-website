@@ -70,9 +70,7 @@ export default function Support() {
 									<FaEnvelope className="icon" />
 								</div>
 								<h4 className="contact-title">Email</h4>
-								<p className="contact-detail">
-									2429549@students.wits.ac.za
-								</p>
+								<p className="contact-detail">clinic.sppa@wits.ac.za</p>
 							</div>
 
 							{/* Our Shop */}

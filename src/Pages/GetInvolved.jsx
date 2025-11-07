@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../Styles/involved.css";
-
+import Whd2026 from "../Assets/images/IMG_1097.jpeg";
+import Cghh from "../Assets/images/download.jpeg";
 import Hi from "../Assets/images/Hi-Hopes.jpg";
 import Carel from "../Assets/images/carel-du-toit.jpg";
 import Hear from "../Assets/images/hearing-loss.jpeg";
@@ -76,6 +77,20 @@ const CAMPAIGNS_CARDS = [
 		title: "World Hearing Day",
 		description: "A day dedicated to raising hearing awareness",
 		link: "https://worldhearingday.org/",
+	},
+
+	{
+		image: Whd2026,
+		title: "World Hearing Day 2026",
+		description: "A day dedicated to raising hearing awareness",
+		link: " https://www.who.int/campaigns/world-hearing-day/2026",
+	},
+	{
+		image: Cghh,
+		title:
+			"Global Perspectives on Family-Centred Early Intervention for Deaf Children",
+		description: "A day dedicated to raising hearing awareness",
+		link: "hhttps://nationaldeafchildrenssociety.typeform.com/to/tJiSvKVq?typeform-source=www.google.com/",
 	},
 ];
 

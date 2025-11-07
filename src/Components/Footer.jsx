@@ -18,7 +18,7 @@ function Footer() {
 							<img
 								src={WordLogo1}
 								alt="Hear & Now"
-								className="footer-footer-heading footer-heading-img"
+								className="footer-heading-img"
 							/>
 						</ScrollLink>
 					</div>
@@ -121,43 +121,50 @@ function Footer() {
 				</div>
 
 				{/* Social Media Icons */}
-				<div className="social-media">
-					<a
-						href="https://www.instagram.com/wits__university/?hl=en"
-						className="social-link"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className="sr-only">Instagram</span>
-						<FaInstagram size={20} />
-					</a>
-					<a
-						href="https://www.facebook.com/WitsUniversity"
-						className="social-link"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className="sr-only">Facebook</span>
-						<FaFacebookF size={20} />
-					</a>
-					<a
-						href="https://www.tiktok.com/@witsuniversity"
-						className="social-link"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className="sr-only">TikTok</span>
-						<FaTiktok size={20} />
-					</a>
-					<a
-						href="https://x.com/WitsUniversity"
-						className="social-link"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className="sr-only">X</span>
-						<FaXTwitter size={20} />
-					</a>
+				<div className="footer-bottom">
+					<hr className="footer-divider" />
+					<div className="social-media">
+						{/* Instagram */}
+						<a
+							href="https://www.instagram.com/wits__university/?hl=en"
+							className="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span className="sr-only">Instagram</span>
+							<FaInstagram size={20} />
+						</a>
+						{/* Facebook */}
+						<a
+							href="https://www.facebook.com/WitsUniversity"
+							className="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span className="sr-only">Facebook</span>
+							<FaFacebookF size={20} />
+						</a>
+						{/* TikTok */}
+						<a
+							href="https://www.tiktok.com/@witsuniversity"
+							className="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span className="sr-only">TikTok</span>
+							<FaTiktok size={20} />
+						</a>
+						{/* X (Twitter) */}
+						<a
+							href="https://x.com/WitsUniversity"
+							className="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span className="sr-only">X</span>
+							<FaXTwitter size={20} />
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>

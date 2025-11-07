@@ -54,7 +54,7 @@ function Home() {
 								about hearing health.
 							</p>
 							<a
-								href="https://www.who.int/campaigns/world-hearing-day/2025"
+								href="https://worldhearingday.org/report-of-workd-hearing-day-2025/"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="featured-button"

@@ -162,6 +162,22 @@
 	margin: 0;
 }
 
+/* === Section Images (for DecibelGuide content images) === */
+.section-image {
+	width: 100%;
+	max-width: 300px;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+}
+
+.section-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+	object-fit: cover;
+}
+
 /* === Lists === */
 .section-list {
 	list-style: none;
@@ -316,11 +332,42 @@
 		font-size: 1.5rem;
 	}
 
+	.section-text {
+		font-size: 1rem;
+	}
+
+	.section-image {
+		max-width: 100%;
+		margin-top: 0.75rem;
+	}
+
+	.section-image img {
+		border-radius: 4px;
+	}
+
+	.safety-level-item {
+		padding: 0.875rem;
+	}
+
+	.level-content {
+		font-size: 0.9375rem;
+	}
+
 	.placeholder-img {
 		max-width: 100%;
 	}
 
 	.guide-tldr {
 		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.guide-content {
+		padding: 1.5rem 0.75rem;
+	}
+
+	.section-image {
+		margin-top: 0.5rem;
 	}
 }
