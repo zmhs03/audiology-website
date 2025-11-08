@@ -16,6 +16,8 @@ import Support from "./Pages/Support";
 import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 ReactGA.initialize("G-E8JKYCETW2");
@@ -93,6 +95,7 @@ function App() {
 				/>
 			</Routes>
 			<Footer />
+			<ToastContainer />
 		</BrowserRouter>
 	);
 }

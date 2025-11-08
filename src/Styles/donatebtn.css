@@ -1,0 +1,124 @@
+.donate-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+	padding: 1rem;
+}
+
+.donate-modal {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2rem;
+	position: relative;
+	width: 100%;
+	max-width: 400px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+	overflow-y: auto;
+	max-height: 90vh;
+}
+
+.modal-close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 1.4rem;
+	cursor: pointer;
+	color: #333;
+}
+
+.donate-details {
+	list-style: none;
+	padding: 0;
+	margin: 1.5rem 0;
+}
+
+.donate-details li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.2rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	gap: 0.5rem; /* space between all children */
+}
+
+.donate-details li strong {
+	min-width: 150px;
+	font-weight: 600;
+	flex-shrink: 0;
+}
+
+.copy-icon {
+	cursor: pointer;
+	color: #828282;
+	transition: color 0.2s ease;
+	flex-shrink: 0;
+	margin-left: 0.25rem; /* tiny space between number/text and icon */
+}
+
+.copy-icon:hover {
+	color: #00c5cd;
+}
+
+.copy-message {
+	margin-top: 1rem;
+	color: green;
+	font-weight: 500;
+	text-align: center;
+}
+
+.instructions {
+	margin-top: 1.5rem;
+	font-size: 0.95rem;
+	color: #555;
+	line-height: 1.6;
+	text-align: center;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 480px) {
+	.donate-modal {
+		padding: 1.5rem;
+	}
+
+	.donate-details li {
+		font-size: 0.9rem;
+		margin-bottom: 1rem;
+	}
+
+	.donate-details li strong {
+		min-width: 120px;
+		font-size: 0.85rem;
+	}
+
+	.instructions {
+		font-size: 0.85rem;
+	}
+
+	.modal-close-btn {
+		font-size: 1.2rem;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+	.donate-modal {
+		padding: 1.75rem;
+	}
+
+	.donate-details li {
+		font-size: 0.95rem;
+		margin-bottom: 1.1rem;
+	}
+
+	.donate-details li strong {
+		min-width: 140px;
+	}
+}

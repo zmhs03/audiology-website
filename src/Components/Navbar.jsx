@@ -1,9 +1,8 @@
 import { Link } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
+import DonateButton from "./DonateButton";
 import Logo from "../Assets/images/Logo1.png";
-import Logow from "../Assets/images/WordLogo.png";
-
 import "../Styles/navbar.css";
 
 const dropdownItems = {
@@ -18,13 +17,21 @@ const dropdownItems = {
 function Navbar() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
+
+	// Track screen width to know if we’re on mobile
+	useEffect(() => {
+		const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+		handleResize(); // run once on mount
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	const toggleDropdown = (key) => {
 		setActiveDropdown(activeDropdown === key ? null : key);
 	};
 
 	const closeDropdown = () => setActiveDropdown(null);
-
 	const closeDrawer = () => {
 		setIsDrawerOpen(false);
 		closeDropdown();
@@ -127,7 +134,14 @@ function Navbar() {
 					</Link>
 				</li>
 			</ul>
-			<button className="donate-btn">Donate</button>
+
+			{!isMobile && (
+				<DonateButton
+					buttonText="Donate"
+					size="medium"
+					variant="navbar"
+				/>
+			)}
 
 			{/* Mobile drawer + overlay */}
 			<div
@@ -187,14 +201,16 @@ function Navbar() {
 							Support
 						</Link>
 					</li>
-					<li className="drawer-donate">
-						<button
-							className="donate-btn"
-							onClick={closeDrawer}
-						>
-							Donate
-						</button>
-					</li>
+
+					{isMobile && (
+						<li className="drawer-donate">
+							<DonateButton
+								buttonText="Donate"
+								size="medium"
+								variant="drawer"
+							/>
+						</li>
+					)}
 				</ul>
 			</div>
 		</nav>
