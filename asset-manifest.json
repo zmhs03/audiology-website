@@ -1,19 +1,32 @@
 {
   "files": {
     "main.css": "/audiology-website/static/css/main.b7c04d47.css",
-    "main.js": "/audiology-website/static/js/main.e7858bc7.js",
+    "main.js": "/audiology-website/static/js/main.39ddf917.js",
     "static/media/hearing-aids.jpg": "/audiology-website/static/media/hearing-aids.aa35ad3bb7a1f0921ad8.jpg",
     "static/media/resources.jpg": "/audiology-website/static/media/resources.e3cac34ca0606c902a67.jpg",
     "static/media/construction.jpg": "/audiology-website/static/media/construction.98cc50919a133ff5a4b2.jpg",
+    "static/media/female-hairdresser-making-hairstyle-brunette-woman-beauty-salon.jpg": "/audiology-website/static/media/female-hairdresser-making-hairstyle-brunette-woman-beauty-salon.e3291a66c94abdbf4416.jpg",
+    "static/media/image-calm-relaxed-woman-meditating-doing-breathing-practices-holding-hands-chest.jpg": "/audiology-website/static/media/image-calm-relaxed-woman-meditating-doing-breathing-practices-holding-hands-chest.dae2bfd31a68dd0e0135.jpg",
+    "static/media/two-young-people-sitting-outside-african-couple-enjoying-time-spending-with-each-other.jpg": "/audiology-website/static/media/two-young-people-sitting-outside-african-couple-enjoying-time-spending-with-each-other.8d0aa47c50e1aa8ea1bb.jpg",
+    "static/media/beginner-hero.jpg": "/audiology-website/static/media/beginner-hero.041ba1cf63b909a3e158.jpg",
+    "static/media/ear.jpg": "/audiology-website/static/media/ear.91cda94100e9974523da.jpg",
     "static/media/hero.jpg": "/audiology-website/static/media/hero.1433c2b74e30eb0a36e2.jpg",
+    "static/media/hearing-issues-collage-design.jpg": "/audiology-website/static/media/hearing-issues-collage-design.47889a9ea56597f9112f.jpg",
+    "static/media/boitumelo-V9IUUmn7X6o-unsplash.jpg": "/audiology-website/static/media/boitumelo-V9IUUmn7X6o-unsplash.df96ea7f73aa88885fba.jpg",
+    "static/media/antoinette-plessis-T3z6e7Q5nJ8-unsplash.jpg": "/audiology-website/static/media/antoinette-plessis-T3z6e7Q5nJ8-unsplash.ba099567df4e32a55a56.jpg",
     "static/media/gallery.jpg": "/audiology-website/static/media/gallery.18bf08a39744472ebbe9.jpg",
     "static/media/community.jpg": "/audiology-website/static/media/community.857e93e893c8f7906938.jpg",
+    "static/media/pexels-fotios-photos-1546005.jpg": "/audiology-website/static/media/pexels-fotios-photos-1546005.d8fc0ff12e19f0f1f6ce.jpg",
+    "static/media/pexels-cottonbro-10466266.jpg": "/audiology-website/static/media/pexels-cottonbro-10466266.38b313416a4709475fa1.jpg",
     "static/media/check-ear.jpg": "/audiology-website/static/media/check-ear.384a92e3d8660be541c3.jpg",
+    "static/media/pexels-jadeemperor-27542914.jpg": "/audiology-website/static/media/pexels-jadeemperor-27542914.5ab7806afb0f99c82154.jpg",
     "static/media/Ear3.jpg": "/audiology-website/static/media/Ear3.08977c9abe01f545f328.jpg",
     "static/media/test.jpg": "/audiology-website/static/media/test.c7303be84bfccf3d90cc.jpg",
     "static/media/Prevention.jpg": "/audiology-website/static/media/Prevention.f66de1174152c36a487f.jpg",
+    "static/media/rohan-krishnan-5on6Yea8rBs-unsplash.jpg": "/audiology-website/static/media/rohan-krishnan-5on6Yea8rBs-unsplash.f2fe5b8bd2c915b39b4b.jpg",
     "static/media/earplug.jpg": "/audiology-website/static/media/earplug.47055c85b857649a467d.jpg",
     "static/media/blank-whd-image.webp": "/audiology-website/static/media/blank-whd-image.8b1864bd55f886709414.webp",
+    "static/media/cellphoneresized.jpg": "/audiology-website/static/media/cellphoneresized.a79051298cc72e256a74.jpg",
     "static/media/WHD-Banner-RGB.png": "/audiology-website/static/media/WHD-Banner-RGB.9e250ccdd21294cf936e.png",
     "static/media/IMG_1097.jpeg": "/audiology-website/static/media/IMG_1097.730511b662d094c10b45.jpeg",
     "static/media/Logo1.png": "/audiology-website/static/media/Logo1.17c20a24248d8c917be0.png",
@@ -21,10 +34,10 @@
     "static/media/WordLogo-white.png": "/audiology-website/static/media/WordLogo-white.fa917b216320c82be63a.png",
     "index.html": "/audiology-website/index.html",
     "main.b7c04d47.css.map": "/audiology-website/static/css/main.b7c04d47.css.map",
-    "main.e7858bc7.js.map": "/audiology-website/static/js/main.e7858bc7.js.map"
+    "main.39ddf917.js.map": "/audiology-website/static/js/main.39ddf917.js.map"
   },
   "entrypoints": [
     "static/css/main.b7c04d47.css",
-    "static/js/main.e7858bc7.js"
+    "static/js/main.39ddf917.js"
   ]
 }
