@@ -1,7 +1,14 @@
 import { useNavigate } from "react-router";
 import "../../Styles/healthguide.css";
-import heroImage from "../../Assets/images/placeholder.jpg";
-import placeholder from "../../Assets/images/placeholder.jpg";
+import heroImage from "../../Assets/images/hearing-issues-collage-design.jpg"; //<a href="https://www.freepik.com/free-photo/hearing-issues-collage-design_33535961.htm">Image by freepik</a>
+import normal from "../../Assets/images/pexels-fotios-photos-1546005.jpg"; //Photo by Lisa from Pexels: https://www.pexels.com/photo/group-of-people-outside-house-1546005/
+import cityTraffic from "../../Assets/images/boitumelo-V9IUUmn7X6o-unsplash.jpg"; //Photo by <a href="https://unsplash.com/@writecodenow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Boitumelo</a> on <a href="https://unsplash.com/photos/a-parking-lot-filled-with-lots-of-cars-and-trucks-V9IUUmn7X6o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+import breathing from "../../Assets/images/image-calm-relaxed-woman-meditating-doing-breathing-practices-holding-hands-chest.jpg"; //<a href="https://www.freepik.com/free-photo/image-calm-relaxed-woman-meditating-doing-breathing-practices-holding-hands-chest_72975922.htm">Image by benzoix on Freepik</a>
+import concert from "../../Assets/images/rohan-krishnan-5on6Yea8rBs-unsplash.jpg"; //      Photo by <a href="https://unsplash.com/@rohankrishnann?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rohan Krishnan</a> on <a href="https://unsplash.com/photos/crowd-watches-a-concert-with-circus-maximus-sign-5on6Yea8rBs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+import hairdryer from "../../Assets/images/female-hairdresser-making-hairstyle-brunette-woman-beauty-salon.jpg"; //<a href="https://www.freepik.com/free-photo/female-hairdresser-making-hairstyle-brunette-woman-beauty-salon_7786263.htm">Image by cookie_studio on Freepik</a>
+import siren from "../../Assets/images/pexels-cottonbro-10466266.jpg"; //Photo by cottonbro studio: https://www.pexels.com/photo/close-up-photo-of-police-siren-10466266/
+
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 const DecibelGuide = ({
@@ -154,7 +161,6 @@ const defaultSections = [
 		type: "text-with-image",
 		content:
 			"A decibel (dB) measures how loud a sound is, also known as amplitude. It is measured on a logarithmic scale, meaning every 10dB increase represents roughly ten times more sound energy. Hearing loss is partly measured by the lowest decibel you can detect. A whisper is about 30dB, normal conversation averages around 60dB, and concerts can reach 100 to 120dB.",
-		image: placeholder,
 	},
 	{
 		title: "Why Visualisation Matters",
@@ -166,31 +172,31 @@ const defaultSections = [
 		title: "Everyday Sound Levels",
 		type: "sound-levels",
 		content: [
-			{ level: "10 dB", description: "Breathing", image: placeholder },
+			{ level: "10 dB", description: "Breathing", image: breathing },
 			{
 				level: "60 dB",
 				description: "Normal conversation",
-				image: placeholder,
+				image: normal,
 			},
 			{
 				level: "85 dB",
 				description: "Busy city traffic",
-				image: placeholder,
+				image: cityTraffic,
 			},
 			{
 				level: "90 dB",
 				description: "Hairdryer or vacuum",
-				image: placeholder,
+				image: hairdryer,
 			},
 			{
 				level: "100-110 dB",
 				description: "Nightclub or concert",
-				image: placeholder,
+				image: concert,
 			},
 			{
 				level: "120+ dB",
 				description: "Vuvuzela at a soccer match or a police siren",
-				image: placeholder,
+				image: siren,
 			},
 		],
 	},

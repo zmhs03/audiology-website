@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router";
 import "../../Styles/healthguide.css";
-import heroImage from "../../Assets/images/placeholder.jpg";
-import placeholder from "../../Assets/images/placeholder.jpg";
+import heroImage from "../../Assets/images/antoinette-plessis-T3z6e7Q5nJ8-unsplash.jpg"; //Photo by <a href="https://unsplash.com/@antoinette_set_go?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Antoinette Plessis</a> on <a href="https://unsplash.com/photos/a-busy-street-with-cars-and-people-T3z6e7Q5nJ8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+import earplugQ from "../../Assets/images/Prevention.jpg"; //Photo by Kindel Media: https://www.pexels.com/photo/close-up-photo-of-orange-earplugs-8488012/
+
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 const defaultSections = [
@@ -85,7 +86,7 @@ const EverydayGuide = ({
 				<div className="guide-image">
 					<figure>
 						<img
-							src={placeholder}
+							src={earplugQ}
 							alt="Noise awareness illustration"
 							className="placeholder-img"
 						/>

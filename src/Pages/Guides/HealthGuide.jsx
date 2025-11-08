@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import "../../Styles/healthguide.css";
-import heroImage from "../../Assets/images/placeholder.jpg";
+import heroImage from "../../Assets/images/beginner-hero.jpg"; //<a href="https://www.freepik.com/free-photo/nosy-adult-overhearing-rumour-being-shocked-about-secret-listening-private-conversation-hearing-unbelievable-gossip-surprised-man-eavesdropping-disbelief-being-shock_23640337.htm">Image by DC Studio on Freepik</a>
 import { IoMdArrowRoundBack } from "react-icons/io";
 const HealthGuide = ({
 	title = "A Beginner's Guide to Hearing Health",

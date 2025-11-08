@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router";
 import "../../Styles/healthguide.css";
-import heroImage from "../../Assets/images/placeholder.jpg";
-import placeholder from "../../Assets/images/placeholder.jpg";
+import heroImage from "../../Assets/images/ear.jpg";
+import niosh from "../../Assets/images/cellphoneresized.jpg";
+import conversation from "../../Assets/images/two-young-people-sitting-outside-african-couple-enjoying-time-spending-with-each-other.jpg"; //P<a href="https://www.freepik.com/free-photo/two-young-people-sitting-outside-african-couple-enjoying-time-spending-with-each-other_13552245.htm">Image by prostooleh on Freepik</a>
+import sereneEarplugs from "../../Assets/images/pexels-jadeemperor-27542914.jpg"; //Photo by Jesutobiloba Precious: https://www.pexels.com/photo/a-pair-of-earphones-and-a-pair-of-earphones-on-a-red-fur-27542914/
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 const EventsGuide = ({
@@ -149,7 +151,6 @@ const defaultSections = [
 		type: "text-with-image",
 		content:
 			"We love live music, from local festivals like Rocking the Daisies to concerts featuring artists like Travis Scott. However, loud environments can cause your ears to be exposed to harmful sound levels. Prolonged exposure to anything above 85 decibels (dB) can result in lasting hearing loss. Here's a quick guide on how to ensure you have a good and safe time at events.",
-		image: placeholder,
 	},
 	{
 		title: "Before the Event",
@@ -159,7 +160,7 @@ const defaultSections = [
 			"Check the layout: Avoid standing near speakers or amplifiers",
 			"Monitor Sound levels: Use sound-level apps to monitor noises in real time",
 		],
-		image: placeholder,
+		image: niosh,
 	},
 	{
 		title: "During the Event",
@@ -170,7 +171,7 @@ const defaultSections = [
 			"Avoid standing directly in front of speakers or near the stage where the sound pressure is highest",
 			"Keep some distance between you and the sound system (even a few meters can reduce noise exposure significantly)",
 		],
-		image: placeholder,
+		image: sereneEarplugs,
 	},
 	{
 		title: "After the Event",
@@ -179,7 +180,7 @@ const defaultSections = [
 			"If you experience ringing or muffled hearing, rest your ears in a quiet place",
 			"A persistent ring could signal a temporary threshold shift and should be checked by a healthcare provider",
 		],
-		image: placeholder,
+		image: conversation,
 	},
 ];
 
