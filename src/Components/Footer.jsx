@@ -110,7 +110,7 @@ function Footer() {
 						<ul className="footer-links">
 							<li>
 								<ScrollLink
-									to="/audiology-website/Support"
+									to="/Support"
 									className="footer-link"
 								>
 									Contact Us
