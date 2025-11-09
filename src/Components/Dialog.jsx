@@ -1,18 +1,36 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/dialog.css";
 import { FaCheck } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
-export default function Dialog({ message, onClose, type = "success" }) {
+export default function Dialog({
+	message,
+	onClose,
+	type = "success",
+	showLoading = true,
+}) {
+	const [loading, setLoading] = useState(showLoading);
+
 	useEffect(() => {
-		// Disable scrolling when modal opens
+		// Disable scrolling
 		document.body.style.overflow = "hidden";
 
-		// Re-enable scrolling when modal closes
+		let timer;
+		if (loading) {
+			// Show loading animation for 1 second
+			timer = setTimeout(() => setLoading(false), 1000);
+		}
+
 		return () => {
+			clearTimeout(timer);
+			// Re-enable scrolling
 			document.body.style.overflow = "unset";
 		};
-	}, []);
+	}, [loading]);
+
+	if (loading) {
+		return <span className="loader"></span>;
+	}
 
 	return (
 		<div className="modal-dialog-overlay">

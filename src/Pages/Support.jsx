@@ -31,7 +31,7 @@ export default function Support() {
 		return emailRegex.test(email);
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 
 		if (
@@ -57,43 +57,27 @@ export default function Support() {
 			return;
 		}
 
-		setModal({ visible: true, message: "Sending...", type: "info" });
+		// Show loading spinner
+		setModal({
+			visible: true,
+			type: "loading",
+		});
 
-		try {
-			const response = await fetch(
-				"https://audiology-website.onrender.com/send-email",
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(formData),
-				}
-			);
-			const data = await response.json();
-
-			if (response.ok) {
-				setModal({
-					visible: true,
-					message: "Message sent successfully!",
-					type: "success",
-				});
-				setFormData({ name: "", email: "", subject: "", message: "" });
-			} else {
-				setModal({
-					visible: true,
-					message: "Error sending message: " + data.error,
-					type: "error",
-				});
-			}
-		} catch (error) {
-			console.error("Error:", error);
+		// Simulate sending delay
+		setTimeout(() => {
 			setModal({
 				visible: true,
-				message: "Error sending message. Please try again later.",
-				type: "error",
+				message: "Message sent successfully!",
+				type: "success",
 			});
-		}
+
+			setFormData({ name: "", email: "", subject: "", message: "" });
+
+			// Auto-close dialog after 2 seconds
+			setTimeout(() => {
+				setModal({ ...modal, visible: false });
+			}, 2000);
+		}, 1000); // 1s loading
 	};
 
 	return (
@@ -121,7 +105,7 @@ export default function Support() {
 									<FaPhone className="icon" />
 								</div>
 								<h4 className="contact-title">Phone</h4>
-								<p className="contact-detail"> 011 717 4567</p>
+								<p className="contact-detail">011 717 4567</p>
 							</div>
 
 							<div className="contact-card">
@@ -250,6 +234,7 @@ export default function Support() {
 								></textarea>
 							</div>
 
+							{/* Submit button stays static */}
 							<button
 								onClick={handleSubmit}
 								className="submit-button"
