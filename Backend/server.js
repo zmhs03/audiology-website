@@ -8,7 +8,7 @@ const app = express();
 
 const allowedOrigins = [
 	"http://localhost:3000",
-	"https://zmhs03.github.io/audiology-website",
+	"https://zmhs03.github.io",
 ];
 
 app.use(
