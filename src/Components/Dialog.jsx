@@ -29,7 +29,11 @@ export default function Dialog({
 	}, [loading]);
 
 	if (loading) {
-		return <span className="loader"></span>;
+		return (
+			<div className="modal-dialog-overlay ">
+				<span className="loader"></span>
+			</div>
+		);
 	}
 
 	return (
