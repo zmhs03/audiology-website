@@ -3,7 +3,7 @@ import { FaPhone } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import "../Styles/support.css";
-import Dialog from "../Components/Dialog"; // adjust path if needed
+import Dialog from "../Components/Dialog";
 
 export default function Support() {
 	const [formData, setFormData] = useState({
@@ -60,11 +60,14 @@ export default function Support() {
 		setModal({ visible: true, message: "Sending...", type: "info" });
 
 		try {
-			const response = await fetch("http://localhost:5000/send-email", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formData),
-			});
+			const response = await fetch(
+				"https://audiology-website.onrender.com/send-email",
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(formData),
+				}
+			);
 
 			const data = await response.json();
 

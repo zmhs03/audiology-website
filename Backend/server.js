@@ -5,7 +5,26 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+	"http://localhost:3000",
+	"https://zmhs03.github.io/audiology-website",
+];
+
+app.use(
+	cors({
+		origin: function (origin, callback) {
+			if (!origin || allowedOrigins.includes(origin)) {
+				callback(null, true);
+			} else {
+				callback(new Error("Not allowed by CORS"));
+			}
+		},
+		methods: ["GET", "POST"],
+		credentials: true,
+	})
+);
+
 app.use(express.json());
 
 app.post("/send-email", async (req, res) => {
