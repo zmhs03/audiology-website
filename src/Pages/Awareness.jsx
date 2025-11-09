@@ -17,7 +17,7 @@ import { articlesData } from "../Data/articles";
 import gallery from "../Assets/images/gallery.jpg";
 import resources from "../Assets/images/resources.jpg";
 import hearing_aid from "../Assets/images/hearing-aids.jpg";
-import check_ear from "../Assets/images/check-ear.jpg";
+import check_ear from "../Assets/images/check-ear.jpg"; //<a href="https://www.freepik.com/free-photo/clinic-otology-specialist-consulting-senior-patient-using-otoscope-check-ear-infection-hospital-otologist-examining-sick-retired-man-internal-ear-condition-while-doctor-cabinet_28175280.htm">Image by DC Studio on Freepik</a>
 import auidology_test from "../Assets/images/test.jpg";
 import construction from "../Assets/images/construction.jpg";
 import community from "../Assets/images/community.jpg";

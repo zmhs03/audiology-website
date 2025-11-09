@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { ExternalLink } from "lucide-react";
 import "../Styles/home.css";
 import WHD from "../Assets/images/WHD-Banner-RGB.png";
 import blank from "../Assets/images/blank-whd-image.webp";
@@ -59,7 +59,7 @@ function Home() {
 								rel="noopener noreferrer"
 								className="featured-button"
 							>
-								Read More <IoMdArrowRoundForward />
+								Learn More <ExternalLink size={18} />
 							</a>
 						</div>
 

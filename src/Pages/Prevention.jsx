@@ -8,6 +8,7 @@ import {
 	AlertCircle,
 	Radio,
 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import EarPrevention from "../Assets/images/Prevention.jpg"; //Photo by Kindel Media: https://www.pexels.com/photo/close-up-photo-of-orange-earplugs-8488012/
 
 import "../Styles/prevention.css";
@@ -45,7 +46,7 @@ function Prevention() {
 		},
 		{
 			id: 4,
-			title: "Everyday Noises You Don’t Notice",
+			title: "Everyday Noises You Don't Notice",
 			description:
 				"Examples that visualise decibels with everyday scenarios",
 			icon: Shield,
@@ -105,7 +106,7 @@ function Prevention() {
 							onClick={scrollToTips}
 							className="hero-prevention-btn"
 						>
-							View Quick Tips
+							View Quick Tips <ArrowRight size={20} />
 						</button>
 					</div>
 					<div className="hero-prevention-right">

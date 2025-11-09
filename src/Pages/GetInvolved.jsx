@@ -11,8 +11,9 @@ import HearingDay from "../Assets/images/Hearing-Day.png";
 import Hearo from "../Assets/images/hearo.png";
 import Africa from "../Assets/images/hear-in.jpeg";
 import Ear3 from "../Assets/images/Ear3.jpg";
+import DonateButton from "../Components/DonateButton";
+import { ExternalLink } from "lucide-react";
 
-import { IoMdArrowRoundForward } from "react-icons/io";
 import CardSlider from "../Components/CardSlider";
 
 // Card Data
@@ -132,7 +133,7 @@ function GetInvolved() {
 							rel="noopener noreferrer"
 							className="learn-more-button"
 						>
-							Learn More <IoMdArrowRoundForward />
+							Learn More <ExternalLink size={18} />
 						</a>
 					</div>
 
@@ -155,7 +156,10 @@ function GetInvolved() {
 			>
 				<div className="container">
 					<h3>Join donors supporting hearing health</h3>
-					<button className="join-btn">Donate</button>
+					<DonateButton
+						buttonText="Donate"
+						size="large"
+					/>
 				</div>
 			</section>
 

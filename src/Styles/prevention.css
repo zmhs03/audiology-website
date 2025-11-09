@@ -81,21 +81,22 @@
 }
 
 .hero-prevention-btn {
-	background-color: var(--primary-color);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: transparent;
 	color: white;
-	padding: 0.875rem 2rem;
-	border-radius: 0.375rem;
+	padding: 0;
 	font-weight: 600;
-	font-size: 1rem;
+	font-size: 1.125rem;
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
 .hero-prevention-btn:hover {
-	background-color: #00a8b0;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(0, 197, 205, 0.3);
+	gap: 0.75rem;
+	color: var(--primary-color);
 }
 
 .hero-prevention-right {
