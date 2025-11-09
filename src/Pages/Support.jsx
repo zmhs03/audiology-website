@@ -64,11 +64,12 @@ export default function Support() {
 				"https://audiology-website.onrender.com/send-email",
 				{
 					method: "POST",
-					headers: { "Content-Type": "application/json" },
+					headers: {
+						"Content-Type": "application/json",
+					},
 					body: JSON.stringify(formData),
 				}
 			);
-
 			const data = await response.json();
 
 			if (response.ok) {

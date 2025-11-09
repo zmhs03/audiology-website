@@ -5,35 +5,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-
-const allowedOrigins = [
-	"http://localhost:3000",
-	"https://zmhs03.github.io",
-];
-
-app.use(
-	cors({
-		origin: function (origin, callback) {
-			if (!origin || allowedOrigins.includes(origin)) {
-				callback(null, true);
-			} else {
-				callback(new Error("Not allowed by CORS"));
-			}
-		},
-		methods: ["GET", "POST"],
-		credentials: true,
-	})
-);
-
+app.use(cors());
 app.use(express.json());
 
 app.post("/send-email", async (req, res) => {
 	const { name, email, subject, message } = req.body;
 
 	const transporter = nodemailer.createTransport({
-		host: "smtp.gmail.com",
-		port: 587,
-		secure: false,
+		service: "gmail",
 		auth: {
 			user: process.env.EMAIL_USER,
 			pass: process.env.EMAIL_PASS,
