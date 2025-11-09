@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/audiology-website/static/css/main.b7c04d47.css",
-    "main.js": "/audiology-website/static/js/main.39ddf917.js",
+    "main.css": "/audiology-website/static/css/main.c5a09988.css",
+    "main.js": "/audiology-website/static/js/main.b9bdc4f2.js",
     "static/media/hearing-aids.jpg": "/audiology-website/static/media/hearing-aids.aa35ad3bb7a1f0921ad8.jpg",
     "static/media/resources.jpg": "/audiology-website/static/media/resources.e3cac34ca0606c902a67.jpg",
     "static/media/construction.jpg": "/audiology-website/static/media/construction.98cc50919a133ff5a4b2.jpg",
     "static/media/female-hairdresser-making-hairstyle-brunette-woman-beauty-salon.jpg": "/audiology-website/static/media/female-hairdresser-making-hairstyle-brunette-woman-beauty-salon.e3291a66c94abdbf4416.jpg",
     "static/media/image-calm-relaxed-woman-meditating-doing-breathing-practices-holding-hands-chest.jpg": "/audiology-website/static/media/image-calm-relaxed-woman-meditating-doing-breathing-practices-holding-hands-chest.dae2bfd31a68dd0e0135.jpg",
     "static/media/two-young-people-sitting-outside-african-couple-enjoying-time-spending-with-each-other.jpg": "/audiology-website/static/media/two-young-people-sitting-outside-african-couple-enjoying-time-spending-with-each-other.8d0aa47c50e1aa8ea1bb.jpg",
+    "static/media/pediatrician-doing-ear-exam-baby-girl.jpg": "/audiology-website/static/media/pediatrician-doing-ear-exam-baby-girl.4bdcc98ed5241ce7a124.jpg",
     "static/media/beginner-hero.jpg": "/audiology-website/static/media/beginner-hero.041ba1cf63b909a3e158.jpg",
+    "static/media/man-wearing-hearing-aids-side-view.jpg": "/audiology-website/static/media/man-wearing-hearing-aids-side-view.a544a577176485e4845b.jpg",
     "static/media/ear.jpg": "/audiology-website/static/media/ear.91cda94100e9974523da.jpg",
     "static/media/hero.jpg": "/audiology-website/static/media/hero.1433c2b74e30eb0a36e2.jpg",
     "static/media/hearing-issues-collage-design.jpg": "/audiology-website/static/media/hearing-issues-collage-design.47889a9ea56597f9112f.jpg",
+    "static/media/audiologist1.jpg": "/audiology-website/static/media/audiologist1.ba8618cd86be3f66f065.jpg",
+    "static/media/elderly-woman-wearing-hearing-aid.jpg": "/audiology-website/static/media/elderly-woman-wearing-hearing-aid.e1dd8b1cf357b57865ea.jpg",
     "static/media/boitumelo-V9IUUmn7X6o-unsplash.jpg": "/audiology-website/static/media/boitumelo-V9IUUmn7X6o-unsplash.df96ea7f73aa88885fba.jpg",
     "static/media/antoinette-plessis-T3z6e7Q5nJ8-unsplash.jpg": "/audiology-website/static/media/antoinette-plessis-T3z6e7Q5nJ8-unsplash.ba099567df4e32a55a56.jpg",
     "static/media/gallery.jpg": "/audiology-website/static/media/gallery.18bf08a39744472ebbe9.jpg",
@@ -20,8 +24,12 @@
     "static/media/pexels-cottonbro-10466266.jpg": "/audiology-website/static/media/pexels-cottonbro-10466266.38b313416a4709475fa1.jpg",
     "static/media/check-ear.jpg": "/audiology-website/static/media/check-ear.384a92e3d8660be541c3.jpg",
     "static/media/pexels-jadeemperor-27542914.jpg": "/audiology-website/static/media/pexels-jadeemperor-27542914.5ab7806afb0f99c82154.jpg",
+    "static/media/mark-paton-RNue9Vxx2sc-unsplash.jpg": "/audiology-website/static/media/mark-paton-RNue9Vxx2sc-unsplash.8899dca23cfa21ccaf8c.jpg",
     "static/media/Ear3.jpg": "/audiology-website/static/media/Ear3.08977c9abe01f545f328.jpg",
     "static/media/test.jpg": "/audiology-website/static/media/test.c7303be84bfccf3d90cc.jpg",
+    "static/media/close-up-hand-holding-protection-heaphones.jpg": "/audiology-website/static/media/close-up-hand-holding-protection-heaphones.c9f51216de8050dd9183.jpg",
+    "static/media/mark-paton-iItakOskHs8-unsplash.jpg": "/audiology-website/static/media/mark-paton-iItakOskHs8-unsplash.a33caf8a26da21a7d45d.jpg",
+    "static/media/audiologist2.jpg": "/audiology-website/static/media/audiologist2.37011644bedd1a64842e.jpg",
     "static/media/Prevention.jpg": "/audiology-website/static/media/Prevention.f66de1174152c36a487f.jpg",
     "static/media/rohan-krishnan-5on6Yea8rBs-unsplash.jpg": "/audiology-website/static/media/rohan-krishnan-5on6Yea8rBs-unsplash.f2fe5b8bd2c915b39b4b.jpg",
     "static/media/earplug.jpg": "/audiology-website/static/media/earplug.47055c85b857649a467d.jpg",
@@ -33,11 +41,11 @@
     "static/media/Hi-Hopes.jpg": "/audiology-website/static/media/Hi-Hopes.5ab1ccef877bf8b69e8a.jpg",
     "static/media/WordLogo-white.png": "/audiology-website/static/media/WordLogo-white.fa917b216320c82be63a.png",
     "index.html": "/audiology-website/index.html",
-    "main.b7c04d47.css.map": "/audiology-website/static/css/main.b7c04d47.css.map",
-    "main.39ddf917.js.map": "/audiology-website/static/js/main.39ddf917.js.map"
+    "main.c5a09988.css.map": "/audiology-website/static/css/main.c5a09988.css.map",
+    "main.b9bdc4f2.js.map": "/audiology-website/static/js/main.b9bdc4f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7c04d47.css",
-    "static/js/main.39ddf917.js"
+    "static/css/main.c5a09988.css",
+    "static/js/main.b9bdc4f2.js"
   ]
 }
