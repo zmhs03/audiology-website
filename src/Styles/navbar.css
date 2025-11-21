@@ -7,6 +7,9 @@
 	font-size: 1rem;
 	padding: 0 30px;
 	z-index: 1000;
+	position: sticky;
+	top: 0;
+	background-color: white;
 }
 
 .navbar-logo {
@@ -33,7 +36,7 @@
 }
 
 .logo-image {
-	height: 100px;
+	height: 150px;
 	width: auto;
 }
 
@@ -66,6 +69,11 @@
 	text-decoration: none;
 	padding: 10px 0;
 	font-size: 1rem;
+}
+.nav-links.active {
+	color: #00c5cd;
+	font-weight: 600;
+	border-bottom: 2px solid #00c5cd;
 }
 
 .nav-links:hover {
@@ -105,6 +113,10 @@
 	padding: 10px 0;
 	font-size: 1rem;
 	height: auto;
+}
+.dropdown-toggle.active {
+	color: #00c5cd;
+	font-weight: 600;
 }
 
 .dropdown-toggle:hover {
@@ -181,10 +193,6 @@
 	border-radius: 0 0 4px 4px;
 }
 
-.navbar {
-	position: relative;
-}
-
 .mobile-menu-icon {
 	display: none;
 	background: none;
@@ -233,6 +241,11 @@
 	flex-direction: column;
 	gap: 1.2rem;
 	flex-grow: 1;
+}
+
+.drawer-menu .active {
+	color: #00c5cd;
+	font-weight: 600;
 }
 
 .drawer-submenu {

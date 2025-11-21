@@ -56,6 +56,13 @@ function Prevention() {
 	];
 
 	const quickTips = {
+		general: [
+			"Keep volume at 60% or below when using headphones on taxi rides",
+			"Limit prolonged exposure to heavy traffic noise on major roads - it can reach 85 dB",
+			"Ask hosts to turn down loud music at braais and shisa nyamas",
+			"Protect your ears from construction noise in growing cities like Joburg and Cape Town",
+			"Get your hearing tested at public health facilities if you notice changes",
+		],
 		festivals: [
 			"Bring multiple pairs of earplugs - you'll lose at least one",
 			"Take 15-minute breaks every hour in quiet zones",
@@ -165,6 +172,13 @@ function Prevention() {
 
 					{/* Tabs */}
 					<div className="tabs">
+						<button
+							className={`tab ${activeTab === "general" ? "active" : ""}`}
+							onClick={() => setActiveTab("general")}
+						>
+							<Users size={20} />
+							General
+						</button>
 						<button
 							className={`tab ${
 								activeTab === "festivals" ? "active" : ""

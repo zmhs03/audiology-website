@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import DonateButton from "./DonateButton";
@@ -18,8 +18,9 @@ function Navbar() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const location = useLocation(); // ADD THIS
 
-	// Track screen width to know if we’re on mobile
+	// Track screen width to know if we're on mobile
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 1024);
 		handleResize(); // run once on mount
@@ -35,6 +36,11 @@ function Navbar() {
 	const closeDrawer = () => {
 		setIsDrawerOpen(false);
 		closeDropdown();
+	};
+
+	// Helper function to check if a dropdown contains the current path
+	const isDropdownActive = (items) => {
+		return items.some((item) => item.to === location.pathname);
 	};
 
 	return (
@@ -64,7 +70,9 @@ function Navbar() {
 				<li className="nav-item">
 					<Link
 						to="/"
-						className="nav-links"
+						className={`nav-links ${
+							location.pathname === "/" ? "active" : ""
+						}`}
 					>
 						Home
 					</Link>
@@ -72,7 +80,9 @@ function Navbar() {
 				<li className="nav-item">
 					<Link
 						to="/AboutUs"
-						className="nav-links"
+						className={`nav-links ${
+							location.pathname === "/AboutUs" ? "active" : ""
+						}`}
 					>
 						About
 					</Link>
@@ -88,7 +98,9 @@ function Navbar() {
 						<div className="nav-item-container">
 							<Link
 								to={items[0].to}
-								className="nav-links main-link"
+								className={`nav-links main-link ${
+									isDropdownActive(items) ? "active" : ""
+								}`}
 							>
 								{key.replace(/([A-Z])/g, " $1").trim()}
 							</Link>
@@ -106,7 +118,9 @@ function Navbar() {
 									<li key={i}>
 										<Link
 											to={item.to}
-											className="dropdown-link"
+											className={`dropdown-link ${
+												location.pathname === item.to ? "active" : ""
+											}`}
 										>
 											{item.label}
 										</Link>
@@ -120,7 +134,9 @@ function Navbar() {
 				<li className="nav-item">
 					<Link
 						to="/Get-Involved"
-						className="nav-links"
+						className={`nav-links ${
+							location.pathname === "/Get-Involved" ? "active" : ""
+						}`}
 					>
 						Get Involved
 					</Link>
@@ -128,7 +144,9 @@ function Navbar() {
 				<li className="nav-item">
 					<Link
 						to="/Support"
-						className="nav-links"
+						className={`nav-links ${
+							location.pathname === "/Support" ? "active" : ""
+						}`}
 					>
 						Support
 					</Link>
@@ -155,6 +173,7 @@ function Navbar() {
 						<Link
 							to="/"
 							onClick={closeDrawer}
+							className={location.pathname === "/" ? "active" : ""}
 						>
 							Home
 						</Link>
@@ -163,7 +182,9 @@ function Navbar() {
 					{Object.entries(dropdownItems).map(([key, items]) => (
 						<li key={key}>
 							<button
-								className="drawer-dropdown"
+								className={`drawer-dropdown ${
+									isDropdownActive(items) ? "active" : ""
+								}`}
 								onClick={() => toggleDropdown(key)}
 							>
 								{key.replace(/([A-Z])/g, " $1").trim()} <FaChevronDown />
@@ -175,6 +196,9 @@ function Navbar() {
 											<Link
 												to={item.to}
 												onClick={closeDrawer}
+												className={
+													location.pathname === item.to ? "active" : ""
+												}
 											>
 												{item.label}
 											</Link>
@@ -189,6 +213,9 @@ function Navbar() {
 						<Link
 							to="/Get-Involved"
 							onClick={closeDrawer}
+							className={
+								location.pathname === "/Get-Involved" ? "active" : ""
+							}
 						>
 							Get Involved
 						</Link>
@@ -197,6 +224,7 @@ function Navbar() {
 						<Link
 							to="/Support"
 							onClick={closeDrawer}
+							className={location.pathname === "/Support" ? "active" : ""}
 						>
 							Support
 						</Link>
