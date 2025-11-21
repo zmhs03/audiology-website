@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/audiology-website/static/css/main.0d402035.css",
-    "main.js": "/audiology-website/static/js/main.ebb996c4.js",
+    "main.css": "/audiology-website/static/css/main.b055cbd7.css",
+    "main.js": "/audiology-website/static/js/main.9767d670.js",
     "static/media/hearing-aids.jpg": "/audiology-website/static/media/hearing-aids.aa35ad3bb7a1f0921ad8.jpg",
     "static/media/resources.jpg": "/audiology-website/static/media/resources.e3cac34ca0606c902a67.jpg",
     "static/media/construction.jpg": "/audiology-website/static/media/construction.98cc50919a133ff5a4b2.jpg",
@@ -41,11 +41,11 @@
     "static/media/Hi-Hopes.jpg": "/audiology-website/static/media/Hi-Hopes.5ab1ccef877bf8b69e8a.jpg",
     "static/media/WordLogo-white.png": "/audiology-website/static/media/WordLogo-white.fa917b216320c82be63a.png",
     "index.html": "/audiology-website/index.html",
-    "main.0d402035.css.map": "/audiology-website/static/css/main.0d402035.css.map",
-    "main.ebb996c4.js.map": "/audiology-website/static/js/main.ebb996c4.js.map"
+    "main.b055cbd7.css.map": "/audiology-website/static/css/main.b055cbd7.css.map",
+    "main.9767d670.js.map": "/audiology-website/static/js/main.9767d670.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d402035.css",
-    "static/js/main.ebb996c4.js"
+    "static/css/main.b055cbd7.css",
+    "static/js/main.9767d670.js"
   ]
 }
