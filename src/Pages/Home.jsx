@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router";
 import {
 	Navigation,
 	Pagination,
@@ -39,18 +40,18 @@ function Home() {
 				<div className="hero-content">
 					<h1 className="hero-title">Every Moment Deserves to be Heard</h1>
 					<div className="hero-cta">
-						<a
-							href="/about"
+						<Link
+							to="/AboutUs"
 							className="cta-btn primary"
 						>
 							Discover Our Mission
-						</a>
-						<a
-							href="/resources"
+						</Link>
+						<Link
+							to="/Resources"
 							className="cta-btn secondary"
 						>
 							Explore Resources
-						</a>
+						</Link>
 					</div>
 				</div>
 			</section>

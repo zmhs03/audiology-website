@@ -2,6 +2,8 @@ import { LiaAssistiveListeningSystemsSolid } from "react-icons/lia";
 import { LuClipboardList } from "react-icons/lu";
 import { BsVolumeUp } from "react-icons/bs";
 import "../Styles/about.css";
+import DonateButton from "../Components/DonateButton";
+
 function AboutUs() {
 	return (
 		<div className="about-container">
@@ -72,7 +74,10 @@ function AboutUs() {
 					"The hearing ear is always found close to the speaking tongue." —
 					Ralph Waldo Emmerson
 				</p>
-				<button className="cta-button">Donate</button>
+				<DonateButton
+					buttonText="Donate"
+					size="large"
+				/>
 			</section>
 		</div>
 	);
