@@ -91,7 +91,7 @@ const CAMPAIGNS_CARDS = [
 		title:
 			"Global Perspectives on Family-Centred Early Intervention for Deaf Children",
 		description: "A day dedicated to raising hearing awareness",
-		link: "hhttps://nationaldeafchildrenssociety.typeform.com/to/tJiSvKVq?typeform-source=www.google.com/",
+		link: "https://nationaldeafchildrenssociety.typeform.com/to/tJiSvKVq?typeform-source=www.google.com/",
 	},
 ];
 
